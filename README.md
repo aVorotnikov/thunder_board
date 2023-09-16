@@ -1,4 +1,6 @@
-# Система управления проектами
+# ThunderBoard
+Система управления проектами.
+
 ## Команда
 + [Воротников Андрей](https://github.com/aVorotnikov)
 + [Кожевникова Диана](https://github.com/diakozhh)
