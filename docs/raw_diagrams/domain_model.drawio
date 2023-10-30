@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-30T21:06:09.002Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="0sSyb_o_2bjCVhAA2O0g" version="22.0.8" type="device">
+<mxfile host="app.diagrams.net" modified="2023-10-30T21:26:35.265Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="Uv3XlgF6DAs4771nVsMy" version="22.0.8" type="device">
   <diagram name="Страница — 1" id="Yr2hoDvGt6ug6Qv0rNzL">
-    <mxGraphModel dx="1000" dy="539" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1167" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -94,19 +94,8 @@
         <mxCell id="UQh1MBE0wKE3If8K73u9-33" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" vertex="1" parent="1">
           <mxGeometry x="220" y="300" width="30" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="UQh1MBE0wKE3If8K73u9-35" value="2..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" vertex="1" parent="1">
-          <mxGeometry x="270" y="261" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="UQh1MBE0wKE3If8K73u9-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="UQh1MBE0wKE3If8K73u9-36">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="320" y="233" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="UQh1MBE0wKE3If8K73u9-36" value="&lt;b&gt;Статус задачи в проекте&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="370" y="205" width="140" height="56" as="geometry" />
-        </mxCell>
-        <mxCell id="UQh1MBE0wKE3If8K73u9-37" value="Позиция" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UQh1MBE0wKE3If8K73u9-36">
-          <mxGeometry y="30" width="140" height="26" as="geometry" />
+        <mxCell id="UQh1MBE0wKE3If8K73u9-35" value="2..* {ordered}" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="330" y="250" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
