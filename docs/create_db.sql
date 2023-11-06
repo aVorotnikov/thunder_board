@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Role (
     roleId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     roleName TEXT NOT NULL
 );
-INSERT OR IGNORE INTO Role (roleName) VALUES ("manager"), ("regular");
+INSERT OR IGNORE INTO Role (roleName) VALUES ("manager"), ("participant");
 
 CREATE TABLE IF NOT EXISTS UserProject (
     userProjectId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
