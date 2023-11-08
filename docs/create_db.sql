@@ -2,6 +2,7 @@
 
 CREATE TABLE IF NOT EXISTS User (
     userId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    userName TEXT NOT NULL,
     userEmail TEXT NOT NULL,
     userPassword TEXT NOT NULL,
     userIsAdmin BOOLEAN NOT NULL
@@ -38,6 +39,7 @@ INSERT OR IGNORE INTO StasusType (stasusTypeName) VALUES ("initial"), ("intermed
 CREATE TABLE IF NOT EXISTS Status (
     statusId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     statusName TEXT NOT NULL,
+    statusNumber INTEGER NOT NULL,
     stasusTypeId INTEGER NOT NULL,
     FOREIGN KEY(stasusTypeId) REFERENCES StasusType(stasusTypeId)
 );
@@ -56,16 +58,10 @@ CREATE TABLE IF NOT EXISTS Task (
     taskDescription TEXT NOT NULL,
     taskTimeEstimation INTEGER NOT NULL,
     taskTimeSpent INTEGER NOT NULL,
+    projectId INTEGER NOT NULL,
     userId INTEGER NOT NULL,
     statusId INTEGER NOT NULL,
+    FOREIGN KEY(projectId) REFERENCES Project(projectId),
     FOREIGN KEY(userId) REFERENCES User(userId),
     FOREIGN KEY(statusId) REFERENCES Status(statusId)
-);
-
-CREATE TABLE IF NOT EXISTS TaskProject (
-    taskProjectId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    taskId INTEGER NOT NULL,
-    projectId INTEGER NOT NULL,
-    FOREIGN KEY(taskId) REFERENCES Task(taskId),
-    FOREIGN KEY(projectId) REFERENCES Project(projectId)
 );
