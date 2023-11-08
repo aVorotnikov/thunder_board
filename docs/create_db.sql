@@ -1,5 +1,7 @@
 /* Script to create data base */
 
+PRAGMA foreign_keys = ON;
+
 CREATE TABLE IF NOT EXISTS User (
     userId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     userName TEXT NOT NULL,
