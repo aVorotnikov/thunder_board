@@ -42,16 +42,12 @@ CREATE TABLE IF NOT EXISTS Status (
     statusId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
     statusName TEXT NOT NULL,
     statusNumber INTEGER NOT NULL,
-    stasusTypeId INTEGER NOT NULL,
-    FOREIGN KEY(stasusTypeId) REFERENCES StasusType(stasusTypeId)
-);
-
-CREATE TABLE IF NOT EXISTS StatusProject (
-    statusProjectId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
-    statusId INTEGER NOT NULL,
     projectId INTEGER NOT NULL,
-    FOREIGN KEY(statusId) REFERENCES Stasus(statusId),
-    FOREIGN KEY(projectId) REFERENCES Project(projectId)
+    stasusTypeId INTEGER NOT NULL,
+    FOREIGN KEY(projectId) REFERENCES Project(projectId),
+    FOREIGN KEY(stasusTypeId) REFERENCES StasusType(stasusTypeId),
+    UNIQUE(statusName, projectId),
+    UNIQUE(statusNumber, projectId)
 );
 
 CREATE TABLE IF NOT EXISTS Task (
