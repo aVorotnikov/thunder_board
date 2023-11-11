@@ -32,20 +32,20 @@ CREATE TABLE IF NOT EXISTS UserProject (
     FOREIGN KEY(roleId) REFERENCES Role(roleId)
 );
 
-CREATE TABLE IF NOT EXISTS StasusType (
-    stasusTypeId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
-    stasusTypeName TEXT NOT NULL UNIQUE
+CREATE TABLE IF NOT EXISTS StatusType (
+    statusTypeId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+    statusTypeName TEXT NOT NULL UNIQUE
 );
-INSERT OR IGNORE INTO StasusType (stasusTypeName) VALUES ("initial"), ("intermediate"), ("final");
+INSERT OR IGNORE INTO StatusType (statusTypeName) VALUES ("initial"), ("intermediate"), ("final");
 
 CREATE TABLE IF NOT EXISTS Status (
     statusId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
     statusName TEXT NOT NULL,
     statusNumber INTEGER NOT NULL,
     projectId INTEGER NOT NULL,
-    stasusTypeId INTEGER NOT NULL,
+    statusTypeId INTEGER NOT NULL,
     FOREIGN KEY(projectId) REFERENCES Project(projectId),
-    FOREIGN KEY(stasusTypeId) REFERENCES StasusType(stasusTypeId),
+    FOREIGN KEY(statusTypeId) REFERENCES StatusType(statusTypeId),
     UNIQUE(statusName, projectId),
     UNIQUE(statusNumber, projectId)
 );
