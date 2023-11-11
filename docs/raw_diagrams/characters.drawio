@@ -1,0 +1,49 @@
+<mxfile host="Electron" modified="2023-11-11T19:51:34.257Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="VcOcniMIS1qwj2Trprih" version="22.0.2" type="device">
+  <diagram name="Страница — 1" id="fbDX3EtdujKvKEBs6gbn">
+    <mxGraphModel dx="1049" dy="703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-2" value="&lt;div&gt;&lt;i&gt;Член команды&lt;/i&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="440" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-3" value="Участник&lt;br&gt;проекта" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="345.5" y="555" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-4" value="&lt;div&gt;Менеджер&lt;/div&gt;&lt;div&gt;проекта&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="254.5" y="555" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-5" value="" style="endArrow=none;html=1;rounded=0;endFill=0;startArrow=block;startFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="vfPtgE0cKAEuEc8hVqxB-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="295.5" y="520" as="sourcePoint" />
+            <mxPoint x="324.5" y="586" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-6" value="" style="endArrow=none;html=1;rounded=0;endFill=0;startArrow=block;startFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="vfPtgE0cKAEuEc8hVqxB-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="335.5" y="520" as="sourcePoint" />
+            <mxPoint x="269.5" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-18" value="&lt;div&gt;Администратор&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="424" y="440" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-25" value="&lt;div&gt;&lt;i&gt;Пользователь&lt;/i&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="340" width="25" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-30" value="" style="endArrow=none;html=1;rounded=0;endFill=0;startArrow=block;startFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="vfPtgE0cKAEuEc8hVqxB-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="410" as="sourcePoint" />
+            <mxPoint x="280" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfPtgE0cKAEuEc8hVqxB-31" value="" style="endArrow=none;html=1;rounded=0;endFill=0;startArrow=block;startFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="vfPtgE0cKAEuEc8hVqxB-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="410" as="sourcePoint" />
+            <mxPoint x="381" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
