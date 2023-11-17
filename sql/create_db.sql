@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS Task (
     taskName TEXT NOT NULL,
     taskDescription TEXT NOT NULL,
     taskTimeEstimation INTEGER NOT NULL,
-    taskTimeSpent INTEGER NOT NULL,
+    taskTimeSpent INTEGER DEFAULT 0 NOT NULL,
     userId INTEGER NOT NULL,
     statusId INTEGER NOT NULL,
     FOREIGN KEY(userId) REFERENCES User(userId),
