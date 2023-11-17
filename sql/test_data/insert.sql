@@ -37,3 +37,57 @@ INSERT OR IGNORE INTO UserProject (userId, projectId, roleId)
     SELECT userId, projectId, roleId
     FROM User, Project, Role
     WHERE userEmail="vitaliev@org.org" AND projectName="Альфа" AND roleName="manager";
+
+-- Insert Alpha statuses
+CREATE TEMP TABLE _DataToInsertInStatusNumber(
+    statusName TEXT NOT NULL,
+    statusNumber INTEGER NOT NULL
+);
+INSERT INTO _DataToInsertInStatusNumber (statusName, statusNumber) VALUES
+    ("Назначено", 0);
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Альфа" AND statusTypeName="initial";
+UPDATE _DataToInsertInStatusNumber SET statusName = "Активно", statusNumber = 1;
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Альфа" AND statusTypeName="intermediate";
+UPDATE _DataToInsertInStatusNumber SET statusName = "Разрешено", statusNumber = 2;
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Альфа" AND statusTypeName="intermediate";
+UPDATE _DataToInsertInStatusNumber SET statusName = "Завершено", statusNumber = 3;
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Альфа" AND statusTypeName="final";
+
+-- Insert Beta statuses
+UPDATE _DataToInsertInStatusNumber SET statusName = "Поступило", statusNumber = 0;
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Бета" AND statusTypeName="initial";
+UPDATE _DataToInsertInStatusNumber SET statusName = "Исследование", statusNumber = 1;
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Бета" AND statusTypeName="intermediate";
+UPDATE _DataToInsertInStatusNumber SET statusName = "В работе", statusNumber = 2;
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Бета" AND statusTypeName="intermediate";
+UPDATE _DataToInsertInStatusNumber SET statusName = "Завершено", statusNumber = 3;
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Бета" AND statusTypeName="final";
+UPDATE _DataToInsertInStatusNumber SET statusName = "Отклонено", statusNumber = 4;
+INSERT OR IGNORE INTO Status (statusName, statusNumber, projectId, statusTypeId)
+    SELECT statusName, statusNumber, projectId, statusTypeId
+    FROM Project, StatusType, _DataToInsertInStatusNumber
+    WHERE projectName="Бета" AND statusTypeName="final";
