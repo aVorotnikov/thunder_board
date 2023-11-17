@@ -56,10 +56,8 @@ CREATE TABLE IF NOT EXISTS Task (
     taskDescription TEXT NOT NULL,
     taskTimeEstimation INTEGER NOT NULL,
     taskTimeSpent INTEGER NOT NULL,
-    projectId INTEGER NOT NULL,
     userId INTEGER NOT NULL,
     statusId INTEGER NOT NULL,
-    FOREIGN KEY(projectId) REFERENCES Project(projectId),
     FOREIGN KEY(userId) REFERENCES User(userId),
     FOREIGN KEY(statusId) REFERENCES Status(statusId)
 );
