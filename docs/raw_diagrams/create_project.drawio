@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-17T23:54:00.744Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="6d3tUBBS_wqbb_lJ1psp" version="22.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-18T00:07:23.693Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="dSnsWwAvBajDVGy9G4xA" version="22.1.3" type="device">
   <diagram name="Страница — 1" id="BnNE_jB0SkXVoIUmftCl">
     <mxGraphModel dx="1007" dy="1104" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -13,7 +13,7 @@
         <mxCell id="1lEt_Adk3FSigu0SiqiG-18" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" parent="1lEt_Adk3FSigu0SiqiG-17" vertex="1">
           <mxGeometry width="880" height="39" as="geometry" />
         </mxCell>
-        <mxCell id="1lEt_Adk3FSigu0SiqiG-19" value="&lt;b&gt;Администатор&lt;/b&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" parent="1lEt_Adk3FSigu0SiqiG-18" vertex="1">
+        <mxCell id="1lEt_Adk3FSigu0SiqiG-19" value="&lt;b&gt;Администратор&lt;/b&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" parent="1lEt_Adk3FSigu0SiqiG-18" vertex="1">
           <mxGeometry width="293" height="39" as="geometry">
             <mxRectangle width="293" height="39" as="alternateBounds" />
           </mxGeometry>
