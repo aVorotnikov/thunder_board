@@ -9,4 +9,4 @@
     - [Получить все проекты](all_projects.sql)
     - [Получить статусы проекта](project_statuses.sql)
     - [Получить команду проекта](project_team.sql)
-    - [Получить команду проекта](project_tasks.sql)
+    - [Получить задачи проекта](project_tasks.sql)
