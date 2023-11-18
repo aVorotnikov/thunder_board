@@ -4,3 +4,4 @@
 * [Текстовое описание бизнес-требований](business_requirements.png)
 * [Модель предметной области](domain_model.png)
 * [Схема базы данных](database.png)
+* [Диаграммы деятельности](activity_diagrams)
