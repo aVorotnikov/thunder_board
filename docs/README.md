@@ -5,3 +5,4 @@
 * [Модель предметной области](domain_model.png)
 * [Схема базы данных](database.png)
 * [SQL-скрипт создания базы данных](create_db.sql)
+* [Диаграммы деятельности](activity_diagrams)
