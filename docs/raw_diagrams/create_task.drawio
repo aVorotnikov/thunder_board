@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-04T20:40:53.094Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="0NPoNlUKk7audrMt-wIi" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-04T20:53:21.255Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="u4ohZXVG3y4R9P-qgPAz" version="22.1.5" type="github">
   <diagram name="Страница — 1" id="4nss-KkPXFQWBisD1zAM">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -56,7 +56,7 @@
             <mxRectangle width="309" height="510" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ir2lZSe-M-KhIsvbzkP0-88" value="&lt;b&gt;Создать задачу&lt;/b&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;width=170;height=25;" parent="ir2lZSe-M-KhIsvbzkP0-23" vertex="1">
+        <mxCell id="ir2lZSe-M-KhIsvbzkP0-88" value="&lt;b&gt;Создание задачи&lt;/b&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;width=170;height=25;" parent="ir2lZSe-M-KhIsvbzkP0-23" vertex="1">
           <mxGeometry x="-221" y="-35" width="561" height="565" as="geometry" />
         </mxCell>
         <mxCell id="xCekLvlc1uRamUwz6qQX-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=open;endFill=0;" parent="ir2lZSe-M-KhIsvbzkP0-23" source="ir2lZSe-M-KhIsvbzkP0-47" target="ir2lZSe-M-KhIsvbzkP0-51" edge="1">
