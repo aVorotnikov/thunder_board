@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-04T20:21:07.059Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="vBqd7zNAj7UXmuJn9N2e" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-04T20:36:32.067Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="55zeZM46HFebuBEqVQoA" version="22.1.5" type="github">
   <diagram name="Страница — 1" id="BnNE_jB0SkXVoIUmftCl">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -131,7 +131,7 @@
             <mxPoint x="475" y="450" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PtfWgMjrsWvgj_dElV7I-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1lEt_Adk3FSigu0SiqiG-2" source="PtfWgMjrsWvgj_dElV7I-26" edge="1">
+        <mxCell id="PtfWgMjrsWvgj_dElV7I-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1lEt_Adk3FSigu0SiqiG-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="775" y="137.5" as="targetPoint" />
           </mxGeometry>
@@ -161,6 +161,9 @@
         <mxCell id="srgpvWK6gvHGhrKrA-_n-3" value="Получает уведомление о результате" style="html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1lEt_Adk3FSigu0SiqiG-2" vertex="1">
           <mxGeometry x="117" y="460" width="140" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="oSlNlNDNE6aFBK3ODdX2-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1lEt_Adk3FSigu0SiqiG-2" source="srgpvWK6gvHGhrKrA-_n-6" target="srgpvWK6gvHGhrKrA-_n-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="srgpvWK6gvHGhrKrA-_n-6" value="Уведомляет, что поля невалидны" style="html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1lEt_Adk3FSigu0SiqiG-2" vertex="1">
           <mxGeometry x="350" y="345" width="140" height="40" as="geometry" />
         </mxCell>
@@ -184,7 +187,7 @@
         <mxCell id="D9_gkGSRkal6eqJJeNkf-2" value="Заполняет поля: название, описание" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1lEt_Adk3FSigu0SiqiG-2" vertex="1">
           <mxGeometry x="121.5" y="230" width="133" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="gAVsmnbwUkmJkpipIYx3-1" value="Отправляет письмо о создании проекта" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1lEt_Adk3FSigu0SiqiG-2">
+        <mxCell id="gAVsmnbwUkmJkpipIYx3-1" value="Отправляет письмо о создании проекта" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1lEt_Adk3FSigu0SiqiG-2" vertex="1">
           <mxGeometry x="405" y="460" width="145" height="40" as="geometry" />
         </mxCell>
       </root>
