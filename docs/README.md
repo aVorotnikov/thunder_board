@@ -5,3 +5,4 @@
 * [Модель предметной области](domain_model.png)
 * [Схема базы данных](database.png)
 * [Диаграммы деятельности](activity_diagrams)
+* [Диаграмма размещения](deployment.png)
