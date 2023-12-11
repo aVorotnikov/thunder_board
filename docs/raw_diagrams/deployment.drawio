@@ -1,0 +1,111 @@
+<mxfile host="Electron" modified="2023-12-11T05:45:25.091Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="dAw6kNStkTvl-PnHLppW" version="22.1.2" type="device">
+  <diagram name="Страница — 1" id="t6v79zgoJijmkGYJj7Zp">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="60__TGmpD9WFv2zfF9kq-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="60__TGmpD9WFv2zfF9kq-1" target="60__TGmpD9WFv2zfF9kq-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-6" value="&amp;lt;&amp;lt;manifest&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="60__TGmpD9WFv2zfF9kq-5">
+          <mxGeometry x="0.0667" relative="1" as="geometry">
+            <mxPoint x="-4" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-1" value="PostgreSQL" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="100" y="270" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-2" value="&lt;&lt;executable&gt;&gt;" style="resizeWidth=1;part=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;" vertex="1" parent="60__TGmpD9WFv2zfF9kq-1">
+          <mxGeometry width="160" height="25" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-3" value="СУБД PostgeSQL" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="380" y="270" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-4" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="60__TGmpD9WFv2zfF9kq-3">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="60__TGmpD9WFv2zfF9kq-9" target="60__TGmpD9WFv2zfF9kq-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-9" value="Сервер PostgreSQL" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="125" y="387" width="100" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=45;entryPerimeter=0;" edge="1" parent="1" source="60__TGmpD9WFv2zfF9kq-1" target="60__TGmpD9WFv2zfF9kq-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="310" as="sourcePoint" />
+            <mxPoint x="390" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-11" value="&amp;lt;&amp;lt;deploy&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="60__TGmpD9WFv2zfF9kq-10">
+          <mxGeometry x="0.0667" relative="1" as="geometry">
+            <mxPoint x="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-12" value="&amp;lt;&amp;lt;execution environment&amp;gt;&amp;gt;&lt;br&gt;Автономная система со виртуальной средой Python" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="75" y="480" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-14" value="Сервер" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="90" y="560" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-15" value="&lt;&lt;executable&gt;&gt;" style="resizeWidth=1;part=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;" vertex="1" parent="60__TGmpD9WFv2zfF9kq-14">
+          <mxGeometry width="160" height="25" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-16" value="ThunderBoard" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="380" y="573" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-17" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="60__TGmpD9WFv2zfF9kq-16">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;exitX=0;exitY=0;exitDx=160;exitDy=42.5;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="60__TGmpD9WFv2zfF9kq-14" target="60__TGmpD9WFv2zfF9kq-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="310" as="sourcePoint" />
+            <mxPoint x="390" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-19" value="&amp;lt;&amp;lt;manifest&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="60__TGmpD9WFv2zfF9kq-18">
+          <mxGeometry x="0.0667" relative="1" as="geometry">
+            <mxPoint x="-4" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-20" value="Рабочая машина" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="75" y="660" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-21" value="Chromium/Firefox" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="90" y="710" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-22" value="&lt;&lt;executable&gt;&gt;" style="resizeWidth=1;part=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;" vertex="1" parent="60__TGmpD9WFv2zfF9kq-21">
+          <mxGeometry width="160" height="25" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0;exitY=0;exitDx=0;exitDy=95;exitPerimeter=0;entryX=0;entryY=0;entryDx=150;entryDy=105;entryPerimeter=0;" edge="1" parent="1" source="60__TGmpD9WFv2zfF9kq-20" target="60__TGmpD9WFv2zfF9kq-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="185" y="450" as="sourcePoint" />
+            <mxPoint x="185" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-24" value="Web-браузер" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="380" y="723" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-25" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="60__TGmpD9WFv2zfF9kq-24">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;exitX=0;exitY=0;exitDx=160;exitDy=42.5;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="60__TGmpD9WFv2zfF9kq-21" target="60__TGmpD9WFv2zfF9kq-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="613" as="sourcePoint" />
+            <mxPoint x="390" y="613" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60__TGmpD9WFv2zfF9kq-27" value="&amp;lt;&amp;lt;manifest&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="60__TGmpD9WFv2zfF9kq-26">
+          <mxGeometry x="0.0667" relative="1" as="geometry">
+            <mxPoint x="-4" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

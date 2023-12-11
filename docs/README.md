@@ -6,3 +6,4 @@
 * [Схема базы данных](database.png)
 * [SQL-скрипт создания базы данных](create_db.sql)
 * [Диаграммы деятельности](activity_diagrams)
+* [Диаграмма размещения](deployment.png)
