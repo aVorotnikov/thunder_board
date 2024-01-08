@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-01-08T12:57:37.878Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="3tb-eCgmhIftqDCKjTF2" version="22.1.16" type="device">
+<mxfile host="Electron" modified="2024-01-08T14:08:09.426Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="bVcgi18_onzJqeEPCDeY" version="22.1.16" type="device">
   <diagram name="Страница — 1" id="ygGXOrWWSujeh68Y5JwH">
-    <mxGraphModel dx="832" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1018" dy="686" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -237,10 +237,10 @@
             <mxPoint x="274" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="EwtHWBw10y8LaySsHu0H-26" value="" style="endArrow=open;html=1;rounded=1;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;exitX=1;exitY=0.25;exitDx=0;exitDy=0;curved=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="EwtHWBw10y8LaySsHu0H-20" target="2pJqgAF-MdWmiApGg5Hb-4" edge="1">
+        <mxCell id="EwtHWBw10y8LaySsHu0H-26" value="" style="endArrow=open;html=1;rounded=1;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;exitX=1;exitY=0.25;exitDx=0;exitDy=0;curved=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="EwtHWBw10y8LaySsHu0H-20" target="3C_XhhcnuyRed2wNptek-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="425" y="320" as="sourcePoint" />
-            <mxPoint x="565" y="320" as="targetPoint" />
+            <mxPoint x="550" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="EwtHWBw10y8LaySsHu0H-27" value="Создать пользователя" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="EwtHWBw10y8LaySsHu0H-26" vertex="1" connectable="0">
@@ -248,38 +248,32 @@
             <mxPoint y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-2" value="" style="endArrow=open;html=1;rounded=1;entryX=1;entryY=1;entryDx=0;entryDy=0;curved=0;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2pJqgAF-MdWmiApGg5Hb-10" target="ju3X173J6w4Ng7l485Qm-13">
+        <mxCell id="2pJqgAF-MdWmiApGg5Hb-2" value="" style="endArrow=open;html=1;rounded=1;entryX=1;entryY=1;entryDx=0;entryDy=0;curved=0;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="2pJqgAF-MdWmiApGg5Hb-10" target="ju3X173J6w4Ng7l485Qm-13" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="555" y="350" as="sourcePoint" />
             <mxPoint x="425" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-3" value="" style="endArrow=open;html=1;rounded=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;curved=0;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2pJqgAF-MdWmiApGg5Hb-12" target="EwtHWBw10y8LaySsHu0H-20">
+        <mxCell id="2pJqgAF-MdWmiApGg5Hb-3" value="" style="endArrow=open;html=1;rounded=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;curved=0;endFill=0;exitX=0.027;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="3C_XhhcnuyRed2wNptek-1" target="EwtHWBw10y8LaySsHu0H-20" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="555" y="640" as="sourcePoint" />
+            <mxPoint x="550" y="641" as="sourcePoint" />
             <mxPoint x="425" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-9" value=":Создание/редактирование проекта" style="shape=umlState;rounded=1;verticalAlign=top;spacingTop=5;umlStateSymbol=collapseState;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="2pJqgAF-MdWmiApGg5Hb-9" value=":Создание/редактирование проекта" style="shape=umlState;rounded=1;verticalAlign=top;spacingTop=5;umlStateSymbol=collapseState;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="555" y="300" width="185" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-7" value="" style="ellipse;" vertex="1" parent="1">
+        <mxCell id="2pJqgAF-MdWmiApGg5Hb-7" value="" style="ellipse;" parent="1" vertex="1">
           <mxGeometry x="550" y="306" width="10" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-8" value="" style="ellipse;" vertex="1" parent="1">
+        <mxCell id="2pJqgAF-MdWmiApGg5Hb-8" value="" style="ellipse;" parent="1" vertex="1">
           <mxGeometry x="550" y="325" width="10" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-10" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="2pJqgAF-MdWmiApGg5Hb-10" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="550" y="345" width="10" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-11" value=":Создание пользователя" style="shape=umlState;rounded=1;verticalAlign=top;spacingTop=5;umlStateSymbol=collapseState;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="555" y="600" width="185" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-4" value="" style="ellipse;" vertex="1" parent="1">
-          <mxGeometry x="550" y="615" width="10" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="2pJqgAF-MdWmiApGg5Hb-12" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="636" width="10" height="10" as="geometry" />
+        <mxCell id="3C_XhhcnuyRed2wNptek-1" value="Создание/редактирование задачи" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="555" y="610" width="185" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
