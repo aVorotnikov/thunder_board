@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-01-08T12:45:37.200Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="aUWEK66Lw-PIwPt-_8O9" version="22.1.16" type="device">
+<mxfile host="Electron" modified="2024-01-09T02:03:53.778Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="Rp9pvdI1qJaNo59tVdEG" version="22.1.16" type="device">
   <diagram name="Страница — 1" id="BnNE_jB0SkXVoIUmftCl">
-    <mxGraphModel dx="1185" dy="683" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="683" dy="398" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -88,7 +88,7 @@
         <mxCell id="S8CzKRJ8aZMLzbk6rD1H-35" value="Выбирает &quot;Создать проект&quot;" style="html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1lEt_Adk3FSigu0SiqiG-2" vertex="1">
           <mxGeometry x="118" y="160" width="140" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="srgpvWK6gvHGhrKrA-_n-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1lEt_Adk3FSigu0SiqiG-2" target="srgpvWK6gvHGhrKrA-_n-13" edge="1">
+        <mxCell id="srgpvWK6gvHGhrKrA-_n-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" parent="1lEt_Adk3FSigu0SiqiG-2" target="srgpvWK6gvHGhrKrA-_n-13" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="480" y="510" />
@@ -97,7 +97,7 @@
             <mxPoint x="480" y="500" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PtfWgMjrsWvgj_dElV7I-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.484;entryY=0.015;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1lEt_Adk3FSigu0SiqiG-2" source="srgpvWK6gvHGhrKrA-_n-10" edge="1">
+        <mxCell id="PtfWgMjrsWvgj_dElV7I-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.484;entryY=0.015;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=open;endFill=0;" parent="1lEt_Adk3FSigu0SiqiG-2" source="srgpvWK6gvHGhrKrA-_n-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="474.94000000000005" y="460.5999999999999" as="targetPoint" />
             <mxPoint x="475" y="450" as="sourcePoint" />
