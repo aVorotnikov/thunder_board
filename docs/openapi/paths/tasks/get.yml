@@ -38,34 +38,7 @@ get:
                 description: Распределение задач по статусам
                 type: array
                 items:
-                  type: object
-                  description: Задача
-                  properties:
-                    status:
-                      type: string
-                      description: Статус задачи
-                      example: Назначено
-                    name:
-                      type: string
-                      description: Название задачи
-                      example: Создание новых задач
-                    description:
-                      type: string
-                      description: Описание задачи
-                      example: Создавать задачи в проекте
-                    user:
-                      type: object
-                      description: Исполнитель
-                      properties:
-                        name:
-                          description: Имя пользователя
-                          type: string
-                          example: Иванов Иван Иванович
-                        email:
-                          description: Адрес электронной почты пользователя
-                          type: string
-                          format: email
-                          example: ivanov.ii@org.org
+                  $ref: ../common/task.yml
     '400':
       description: Ошибка
       content:

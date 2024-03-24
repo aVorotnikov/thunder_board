@@ -1,0 +1,33 @@
+get:
+  summary: Получить информацию о проекте по имени
+  description: |
+    Получить информацию о проекте по имени
+
+    *Доступна всем авторизованным пользователям*
+
+  tags:
+    - Проекты
+  security:
+    - bearerAuth: []
+  parameters:
+    - name: name
+      description: Название проекта
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../common/project.yml
+    '400':
+      description: Ошибка
+      content:
+        application/json:
+          schema:
+            $ref: ../common/error.yml
+    '401':
+      description: Ошибка аутентификации

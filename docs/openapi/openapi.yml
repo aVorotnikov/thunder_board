@@ -21,6 +21,8 @@ paths:
 
   /users:
     $ref: paths/users/get.yml
+  /user:
+    $ref: paths/users/get_user.yml
   /users/add:
     $ref: paths/users/add.yml
   /users/remove:
@@ -28,6 +30,8 @@ paths:
 
   /projects:
     $ref: paths/projects/get.yml
+  /project:
+    $ref: paths/projects/get_project.yml
   /projects/add:
     $ref: paths/projects/add.yml
   /projects/change:
@@ -39,6 +43,8 @@ paths:
 
   /tasks:
     $ref: paths/tasks/get.yml
+  /task:
+    $ref: paths/tasks/get_task.yml
   /tasks/add:
     $ref: paths/tasks/add.yml
   /tasks/change:
