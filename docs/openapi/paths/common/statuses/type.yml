@@ -1,0 +1,6 @@
+type: string
+description: Тип статуса
+enum:
+  - initial
+  - intermediate
+  - final

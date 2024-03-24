@@ -1,0 +1,19 @@
+description: Статусы задач проекта
+type: array
+items:
+  type: object
+  description: Cтатус
+  properties:
+    name:
+      type: string
+      description: Название статуса
+    type:
+      $ref: type.yml
+example:
+  - name: Назначено
+    type: initial
+  - name: Разрешено
+    type: intermediate
+  - name: Завершено
+    type: final
+
