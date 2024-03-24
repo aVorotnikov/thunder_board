@@ -1,5 +1,9 @@
 type: object
 description: Пользователь
+required:
+  - name
+  - email
+  - isAdmin
 properties:
   name:
     description: Имя пользователя

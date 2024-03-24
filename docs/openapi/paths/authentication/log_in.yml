@@ -12,6 +12,9 @@ post:
       application/json:
         schema:
           type: object
+          required:
+            - email
+            - password
           properties:
             email:
               description: Адрес электронной почты пользователя
