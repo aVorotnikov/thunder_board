@@ -1,0 +1,50 @@
+post:
+  summary: Добавить пользователя в проект
+  description: |
+    Добавить проект
+
+    *Доступна администраторам и менеджерам проекта*
+
+  tags:
+    - Проекты
+  security:
+    - bearerAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Проект
+          required:
+            - name
+            - user
+          properties:
+            name:
+              description: Имя проекта
+              type: string
+              example: Первый проект
+            user:
+              type: object
+              description: Новый член команды проекта
+              properties:
+                email:
+                  description: Адрес электронной почты пользователя
+                  type: string
+                  format: email
+                  example: ivanov.ii@org.org
+                role:
+                  description: Роль пользователя
+                  type: string
+                  $ref: ../common/role.yml
+                  example: manager
+  responses:
+    '200':
+      description: OK
+    '400':
+      description: Ошибка
+      content:
+        application/json:
+          schema:
+            $ref: "../common/error.yml"
+    '401':
+      description: Ошибка аутентификации
