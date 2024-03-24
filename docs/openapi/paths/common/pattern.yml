@@ -1,0 +1,6 @@
+name: pattern
+description: Строка поиска
+in: query
+required: false
+schema:
+  type: string

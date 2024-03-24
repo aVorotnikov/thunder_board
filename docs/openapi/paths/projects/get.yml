@@ -1,28 +1,25 @@
 get:
-  summary: Получить список пользователей
+  summary: Получить список проектов
   description: |
-    Получить список пользователей
+    Получить список проектов
 
     *Доступна всем авторизованным пользователям*
 
   tags:
-    - Учётные записи
+    - Проекты
   security:
     - bearerAuth: []
   parameters:
-    - name: onlyAdmins
-      description: Получить только адимнистраторов
-      in: query
-      required: false
-      schema:
-        type: boolean
     - $ref: ../common/pattern.yml
-    - name: project
-      description: Имя проекта
+    - name: users[]
+      description: Участники
       in: query
       required: false
       schema:
-        type: string
+        type: array
+        items:
+          type: string
+          format: email
     - $ref: ../common/pagination/page.yml
     - $ref: ../common/pagination/per_page.yml
   responses:
@@ -33,11 +30,11 @@ get:
           schema:
             type: object
             properties:
-              users:
-                description: Список пользователей
+              projects:
+                description: Список проектов
                 type: array
                 items:
-                  $ref: ../common/user.yml
+                  $ref: ../common/project.yml
     '400':
       description: Ошибка
       content:
