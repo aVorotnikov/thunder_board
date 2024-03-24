@@ -1,0 +1,52 @@
+post:
+  summary: Войти в систему
+  description: |
+    Войти в систему
+
+    *Доступна всем неавторизованным пользователям*
+
+  tags:
+    - Аутентификация
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            email:
+              description: Адрес электронной почты пользователя
+              type: string
+              format: email
+            password:
+              description: Пароль пользователя
+              type: string
+              format: password
+          example:
+            email: PetrovPP@example.com
+            password: Password1_
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              isAdmin:
+                description: Авторизованный пользователь является администратором
+                type: boolean
+              token:
+                description: Токен для последующей авторизации
+                type: string
+                format: byte
+            example:
+              isAdmin: true
+              token: eyJ0eXAwcvvcb1QiLCJhbGciOsdfsUzI1NiJ9.eyJpZCI6IjEzMzciLCJ1c2VybmFtZSI6ImJpem9uZSIswwwfcI6MTU5NDIwOTYwMCwicm9sZSI6InVzZXIifQ.ZvkYYnyM92xvxcvNW9_hSis7_x3_9rymsDcvcbvuOcc1I
+    '400':
+      description: Ошибка
+      content:
+        application/json:
+          schema:
+            $ref: "../common/error.yml"
+    '401':
+      description: Ошибка аутентификации
