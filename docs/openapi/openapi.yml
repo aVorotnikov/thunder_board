@@ -34,6 +34,8 @@ paths:
     $ref: paths/projects/change.yml
   /projects/add-user:
     $ref: paths/projects/add_user.yml
+  /projects/remove-user:
+    $ref: paths/projects/remove_user.yml
 
 components:
   securitySchemes:
