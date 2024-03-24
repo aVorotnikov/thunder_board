@@ -26,3 +26,13 @@ properties:
         type: string
         format: email
         example: ivanov.ii@org.org
+  proposedTime:
+    description: Выделенное время
+    type: integer
+    format: int64
+    example: 10
+  remainingTime:
+    description: Потраченное время
+    type: integer
+    format: int64
+    example: 0
