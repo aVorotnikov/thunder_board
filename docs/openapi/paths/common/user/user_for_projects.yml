@@ -1,0 +1,13 @@
+type: object
+description: Новый член команды проекта
+properties:
+  email:
+    description: Адрес электронной почты пользователя
+    type: string
+    format: email
+    example: ivanov.ii@org.org
+  role:
+    description: Роль пользователя
+    type: string
+    $ref: role.yml
+    example: manager

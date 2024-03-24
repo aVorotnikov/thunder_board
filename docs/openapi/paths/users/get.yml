@@ -37,7 +37,7 @@ get:
                 description: Список пользователей
                 type: array
                 items:
-                  $ref: ../common/user.yml
+                  $ref: ../common/user/user.yml
     '400':
       description: Ошибка
       content:
