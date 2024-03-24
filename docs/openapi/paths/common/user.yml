@@ -1,0 +1,16 @@
+type: object
+description: Пользователь
+properties:
+  name:
+    description: Имя пользователя
+    type: string
+    example: Иванов Иван Иванович
+  email:
+    description: Адрес электронной почты пользователя
+    type: string
+    format: email
+    example: ivanov.ii@org.org
+  isAdmin:
+    description: Является ли пользователь администратором
+    type: boolean
+    example: false

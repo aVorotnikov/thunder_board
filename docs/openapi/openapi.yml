@@ -1,0 +1,31 @@
+openapi: '3.0.2'
+info:
+  title: API сервера ThunderBoard
+  version: '1.0'
+
+tags:
+  - name: Аутентификация
+    description: Методы аутентификации
+  - name: Учётные записи
+    description: Методы взаимодействия с учётными записями
+  - name: Проекты
+    description: Методы взаимодействия с проектами
+  - name: Задачи
+    description: Методы взаимодействия с задачами
+
+paths:
+  /log-in:
+    $ref: paths/authentication/log_in.yml
+  /log-out:
+    $ref: paths/authentication/log_out.yml
+
+  /users:
+    $ref: paths/users/get.yml
+  /users/add:
+    $ref: paths/users/add.yml
+  /users/remove:
+    $ref: paths/users/remove.yml
+
+components:
+  securitySchemes:
+    $ref: security/jwt.yml

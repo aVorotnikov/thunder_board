@@ -1,0 +1,7 @@
+name: page
+description: Номер страницы
+in: query
+schema:
+  type: integer
+  format: int64
+  default: 0
