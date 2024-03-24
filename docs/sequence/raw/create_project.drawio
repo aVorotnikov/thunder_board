@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-23T22:14:03.659Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="2R-i3f1KxGssI6bePHtF" version="23.1.5" type="device">
+<mxfile host="Electron" modified="2024-03-24T19:50:43.393Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="twZH3nQo_2wXsE32JSf7" version="23.1.5" type="device">
   <diagram name="Страница — 1" id="trLNLtZM0I9YAx9lOJCE">
-    <mxGraphModel dx="1525" dy="470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2048" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -186,13 +186,13 @@
         <mxCell id="gv5lze--wlOEz9VzUW8e-42" value="Система оповещений" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1490" y="40" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="gv5lze--wlOEz9VzUW8e-44" value="GET /projects" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-65" target="gv5lze--wlOEz9VzUW8e-43" edge="1">
+        <mxCell id="gv5lze--wlOEz9VzUW8e-44" value="GET /project" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-65" target="gv5lze--wlOEz9VzUW8e-43" edge="1">
           <mxGeometry x="-0.6452" relative="1" as="geometry">
             <mxPoint x="285" y="225" as="sourcePoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gv5lze--wlOEz9VzUW8e-45" value="Список проектов" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-43" target="gv5lze--wlOEz9VzUW8e-65" edge="1">
+        <mxCell id="gv5lze--wlOEz9VzUW8e-45" value="Наличие проекта" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-43" target="gv5lze--wlOEz9VzUW8e-65" edge="1">
           <mxGeometry x="0.6452" relative="1" as="geometry">
             <mxPoint x="285" y="295" as="targetPoint" />
             <mxPoint as="offset" />
@@ -204,7 +204,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gv5lze--wlOEz9VzUW8e-49" value="Список проектов" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-47" target="gv5lze--wlOEz9VzUW8e-43" edge="1">
+        <mxCell id="gv5lze--wlOEz9VzUW8e-49" value="Наличие проекта" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-47" target="gv5lze--wlOEz9VzUW8e-43" edge="1">
           <mxGeometry x="0.2667" y="-5" relative="1" as="geometry">
             <mxPoint x="605" y="295" as="targetPoint" />
             <mxPoint as="offset" />
@@ -231,13 +231,13 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gv5lze--wlOEz9VzUW8e-60" value="Запросить проекты" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-47" target="gv5lze--wlOEz9VzUW8e-59" edge="1">
+        <mxCell id="gv5lze--wlOEz9VzUW8e-60" value="Запросить проект" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-47" target="gv5lze--wlOEz9VzUW8e-59" edge="1">
           <mxGeometry x="-0.5806" y="5" relative="1" as="geometry">
             <mxPoint x="925" y="315" as="sourcePoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gv5lze--wlOEz9VzUW8e-61" value="Список проектов" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-59" target="gv5lze--wlOEz9VzUW8e-47" edge="1">
+        <mxCell id="gv5lze--wlOEz9VzUW8e-61" value="Наличие проекта" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-59" target="gv5lze--wlOEz9VzUW8e-47" edge="1">
           <mxGeometry x="0.6452" y="-5" relative="1" as="geometry">
             <mxPoint x="925" y="345" as="targetPoint" />
             <mxPoint as="offset" />
@@ -474,7 +474,7 @@
             <mxPoint x="125" y="1185" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gv5lze--wlOEz9VzUW8e-146" value="POST /project" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-142" target="gv5lze--wlOEz9VzUW8e-145" edge="1">
+        <mxCell id="gv5lze--wlOEz9VzUW8e-146" value="POST /project/add" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" parent="1" source="gv5lze--wlOEz9VzUW8e-142" target="gv5lze--wlOEz9VzUW8e-145" edge="1">
           <mxGeometry x="-0.6452" y="5" relative="1" as="geometry">
             <mxPoint x="285" y="1115" as="sourcePoint" />
             <mxPoint as="offset" />
