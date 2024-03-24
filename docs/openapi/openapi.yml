@@ -30,6 +30,8 @@ paths:
     $ref: paths/projects/get.yml
   /projects/add:
     $ref: paths/projects/add.yml
+  /projects/change:
+    $ref: paths/projects/change.yml
 
 components:
   securitySchemes:
