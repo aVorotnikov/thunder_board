@@ -1,5 +1,8 @@
 type: object
 description: Проект
+required:
+  - name
+  - description
 properties:
   name:
     description: Имя проекта
