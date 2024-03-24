@@ -39,6 +39,8 @@ paths:
 
   /tasks:
     $ref: paths/tasks/get.yml
+  /tasks/add:
+    $ref: paths/tasks/add.yml
 
 components:
   securitySchemes:
