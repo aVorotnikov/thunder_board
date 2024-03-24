@@ -37,6 +37,9 @@ paths:
   /projects/remove-user:
     $ref: paths/projects/remove_user.yml
 
+  /tasks:
+    $ref: paths/tasks/get.yml
+
 components:
   securitySchemes:
     $ref: security/jwt.yml
