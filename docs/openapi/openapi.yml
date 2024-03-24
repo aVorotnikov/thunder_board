@@ -26,6 +26,9 @@ paths:
   /users/remove:
     $ref: paths/users/remove.yml
 
+  /project:
+    $ref: paths/projects/get.yml
+
 components:
   securitySchemes:
     $ref: security/jwt.yml

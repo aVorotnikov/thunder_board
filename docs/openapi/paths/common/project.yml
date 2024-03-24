@@ -1,0 +1,11 @@
+type: object
+description: Проект
+properties:
+  name:
+    description: Имя проекта
+    type: string
+    example: Первый проект
+  description:
+    description: Описание проекта
+    type: string
+    example: Проект несения добра
