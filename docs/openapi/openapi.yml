@@ -26,8 +26,10 @@ paths:
   /users/remove:
     $ref: paths/users/remove.yml
 
-  /project:
+  /projects:
     $ref: paths/projects/get.yml
+  /projects/add:
+    $ref: paths/projects/add.yml
 
 components:
   securitySchemes:

@@ -1,0 +1,44 @@
+post:
+  summary: Добавить проект
+  description: |
+    Добавить проект
+
+    *Доступна администраторам*
+
+  tags:
+    - Проекты
+  security:
+    - bearerAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Проект
+          properties:
+            name:
+              description: Имя проекта
+              type: string
+              example: Первый проект
+            description:
+              description: Описание проекта
+              type: string
+              example: Проект несения добра
+            manager:
+              description: Адрес электронной почты первого менеджера
+              type: string
+              format: email
+              example: ivanov.ii@org.org
+            statuses:
+              $ref: ../common/statuses/statuses.yml
+  responses:
+    '200':
+      description: OK
+    '400':
+      description: Ошибка
+      content:
+        application/json:
+          schema:
+            $ref: "../common/error.yml"
+    '401':
+      description: Ошибка аутентификации
