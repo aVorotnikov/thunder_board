@@ -15,9 +15,11 @@ tags:
 
 paths:
   /log-in:
-    $ref: paths/authentication/log_in.yml
+    post:
+      $ref: paths/authentication/log_in.yml
   /log-out:
-    $ref: paths/authentication/log_out.yml
+    get:
+      $ref: paths/authentication/log_out.yml
 
   /users:
     get:

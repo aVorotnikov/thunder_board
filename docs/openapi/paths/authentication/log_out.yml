@@ -1,22 +1,21 @@
-get:
-  summary: Выйти из системы
-  description: |
-    Выйти из системы
+summary: Выйти из системы
+description: |
+  Выйти из системы
 
-    *Доступна всем авторизованным пользователям*
+  *Доступна всем авторизованным пользователям*
 
-  tags:
-    - Аутентификация
-  security:
-    - bearerAuth: []
-  responses:
-    '200':
-      description: OK
-    '400':
-      description: Ошибка
-      content:
-        application/json:
-          schema:
-            $ref: "../common/error.yml"
-    '401':
-      description: Ошибка аутентификации
+tags:
+  - Аутентификация
+security:
+  - bearerAuth: []
+responses:
+  '200':
+    description: OK
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: "../common/error.yml"
+  '401':
+    description: Ошибка аутентификации
