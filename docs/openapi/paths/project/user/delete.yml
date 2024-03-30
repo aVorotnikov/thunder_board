@@ -6,6 +6,7 @@ description: |
 
 tags:
   - Проекты
+  - Учётные записи
 security:
   - bearerAuth: []
 parameters:
