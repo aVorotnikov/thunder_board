@@ -4,7 +4,6 @@ required:
   - name
   - email
   - isAdmin
-  - id
 properties:
   name:
     description: Имя пользователя
@@ -19,8 +18,3 @@ properties:
     description: Является ли пользователь администратором
     type: boolean
     example: false
-  id:
-    description: Идентификатор пользователя
-    type: integer
-    format: int64
-    example: 1

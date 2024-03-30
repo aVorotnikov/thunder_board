@@ -27,7 +27,7 @@ requestBody:
             description: Описание задачи (только для менеджеров)
             type: string
             example: Создавать задачи в проекте
-          id:
+          userId:
             description: Идентификатор пользователя
             type: integer
             format: int64

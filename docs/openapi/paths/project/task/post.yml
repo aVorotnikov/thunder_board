@@ -19,7 +19,7 @@ requestBody:
           - project
           - name
           - description
-          - userEmail
+          - userId
           - proposedTime
           - remainingTime
         properties:
@@ -35,11 +35,11 @@ requestBody:
             description: Описание задачи
             type: string
             example: Создавать задачи в проекте
-          userEmail:
-            description: Адрес электронной почты пользователя
-            type: string
-            format: email
-            example: ivanov.ii@org.org
+          userId:
+            description: Идентификатор пользователя
+            type: integer
+            format: int64
+            example: 1
           proposedTime:
             description: Выделенное время
             type: integer
