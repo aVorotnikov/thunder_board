@@ -1,0 +1,24 @@
+summary: Удалить пользователя из проекта
+description: |
+  Удалить пользователя из проекта
+
+  *Доступна администраторам и менеджерам проекта*
+
+tags:
+  - Проекты
+security:
+  - bearerAuth: []
+parameters:
+  - $ref: ../../common/project/project_id.yml
+  - $ref: ../../common/user/user_id.yml
+responses:
+  '200':
+    description: OK
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: ../../common/error.yml
+  '401':
+    description: Ошибка аутентификации

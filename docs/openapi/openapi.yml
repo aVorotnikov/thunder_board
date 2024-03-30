@@ -24,7 +24,7 @@ paths:
   /users:
     get:
       $ref: paths/users/get.yml
-  /user/{id}:
+  /user/{userId}:
     get:
       $ref: paths/user/get.yml
     post:
@@ -33,17 +33,20 @@ paths:
       $ref: paths/user/delete.yml
 
   /projects:
-    $ref: paths/projects/get.yml
-  /project:
-    $ref: paths/projects/get_project.yml
-  /projects/add:
-    $ref: paths/projects/add.yml
-  /projects/change:
-    $ref: paths/projects/change.yml
-  /projects/add-user:
-    $ref: paths/projects/add_user.yml
-  /projects/remove-user:
-    $ref: paths/projects/remove_user.yml
+    get:
+      $ref: paths/projects/get.yml
+  /project/{projectId}:
+    get:
+      $ref: paths/project/get.yml
+    post:
+      $ref: paths/project/post.yml
+    patch:
+      $ref: paths/project/patch.yml
+  /project/{projectId}/user/{userId}:
+    put:
+      $ref: paths/project/user/put.yml
+    delete:
+      $ref: paths/project/user/delete.yml
 
   /tasks:
     $ref: paths/tasks/get.yml

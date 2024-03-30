@@ -1,0 +1,27 @@
+summary: Получить информацию о проекте
+description: |
+  Получить информацию о проекте
+
+  *Доступна всем авторизованным пользователям*
+
+tags:
+  - Проекты
+security:
+  - bearerAuth: []
+parameters:
+  - $ref: ../common/project/project_id.yml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../common/project/project_no_id.yml
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: ../common/error.yml
+  '401':
+    description: Ошибка аутентификации

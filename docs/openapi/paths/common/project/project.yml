@@ -1,0 +1,20 @@
+type: object
+description: Проект
+required:
+  - name
+  - description
+  - id
+properties:
+  name:
+    description: Имя проекта
+    type: string
+    example: Первый проект
+  description:
+    description: Описание проекта
+    type: string
+    example: Проект несения добра
+  id:
+    description: Идентификатор проекта
+    type: integer
+    format: int64
+    example: 1

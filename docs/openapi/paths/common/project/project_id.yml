@@ -1,0 +1,7 @@
+name: projectId
+description: Идентификатор проекта
+in: path
+required: true
+schema:
+  type: integer
+  format: int64

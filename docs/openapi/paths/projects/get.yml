@@ -1,45 +1,45 @@
-get:
-  summary: Получить список проектов
-  description: |
-    Получить список проектов
+summary: Получить список проектов
+description: |
+  Получить список проектов
 
-    *Доступна всем авторизованным пользователям*
+  *Доступна всем авторизованным пользователям*
 
-  tags:
-    - Проекты
-  security:
-    - bearerAuth: []
-  parameters:
-    - $ref: ../common/pattern.yml
-    - name: users[]
-      description: Участники
-      in: query
-      required: false
-      schema:
-        type: array
-        items:
-          type: string
-          format: email
-    - $ref: ../common/pagination/page.yml
-    - $ref: ../common/pagination/per_page.yml
-  responses:
-    '200':
-      description: OK
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              projects:
-                description: Список проектов
-                type: array
-                items:
-                  $ref: ../common/project.yml
-    '400':
-      description: Ошибка
-      content:
-        application/json:
-          schema:
-            $ref: ../common/error.yml
-    '401':
-      description: Ошибка аутентификации
+tags:
+  - Проекты
+security:
+  - bearerAuth: []
+parameters:
+  - $ref: ../common/pattern.yml
+  - name: users[]
+    description: Участники
+    in: query
+    required: false
+    schema:
+      type: array
+      items:
+        description: Идентификатор пользователя
+        type: integer
+        format: int64
+  - $ref: ../common/pagination/page.yml
+  - $ref: ../common/pagination/per_page.yml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            projects:
+              description: Список проектов
+              type: array
+              items:
+                $ref: ../common/project/project.yml
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: ../common/error.yml
+  '401':
+    description: Ошибка аутентификации

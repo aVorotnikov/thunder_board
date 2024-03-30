@@ -1,0 +1,38 @@
+summary: Изменить проект
+description: |
+  Изменить проект
+
+  *Доступна администраторам и менеджерам проекта*
+
+tags:
+  - Проекты
+security:
+  - bearerAuth: []
+parameters:
+- $ref: ../common/project/project_id.yml
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        description: Проект
+        properties:
+          name:
+            description: Имя проекта
+            type: string
+            example: Первый проект
+          description:
+            description: Описание проекта
+            type: string
+            example: Проект несения добра
+responses:
+  '200':
+    description: OK
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: "../common/error.yml"
+  '401':
+    description: Ошибка аутентификации
