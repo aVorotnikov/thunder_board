@@ -1,0 +1,37 @@
+summary: Добавить пользователя
+description: |
+  Добавить пользователя
+
+  *Доступна администраторам*
+
+tags:
+  - Учётные записи
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../common/user/user_no_id.yml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Пользователь
+          properties:
+            id:
+              description: Идентификатор пользователя
+              type: integer
+              format: int64
+              example: 1
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: "../common/error.yml"
+  '401':
+    description: Ошибка аутентификации

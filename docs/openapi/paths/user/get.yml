@@ -1,0 +1,27 @@
+summary: Получить пользователя
+description: |
+  Получить пользователя
+
+  *Доступна всем авторизованным пользователям*
+
+tags:
+  - Учётные записи
+security:
+  - bearerAuth: []
+parameters:
+  - $ref: ../common/user/user_id.yml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../common/user/user_for_projects.yml
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: ../common/error.yml
+  '401':
+    description: Ошибка аутентификации

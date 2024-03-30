@@ -1,0 +1,7 @@
+name: id
+description: Идентификатор пользователя
+in: path
+required: true
+schema:
+  type: integer
+  format: int64

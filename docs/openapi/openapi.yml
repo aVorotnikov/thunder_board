@@ -20,13 +20,15 @@ paths:
     $ref: paths/authentication/log_out.yml
 
   /users:
-    $ref: paths/users/get.yml
-  /user:
-    $ref: paths/users/get_user.yml
-  /users/add:
-    $ref: paths/users/add.yml
-  /users/remove:
-    $ref: paths/users/remove.yml
+    get:
+      $ref: paths/users/get.yml
+  /user/{id}:
+    get:
+      $ref: paths/user/get.yml
+    post:
+      $ref: paths/user/post.yml
+    delete:
+      $ref: paths/user/delete.yml
 
   /projects:
     $ref: paths/projects/get.yml

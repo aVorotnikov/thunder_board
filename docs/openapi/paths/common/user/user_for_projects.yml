@@ -1,11 +1,11 @@
 type: object
 description: Новый член команды проекта
 properties:
-  email:
-    description: Адрес электронной почты пользователя
-    type: string
-    format: email
-    example: ivanov.ii@org.org
+  id:
+    description: Идентификатор пользователя
+    type: integer
+    format: int64
+    example: 1
   role:
     description: Роль пользователя
     type: string
