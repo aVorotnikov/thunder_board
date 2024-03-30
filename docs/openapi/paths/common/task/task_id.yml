@@ -1,0 +1,7 @@
+name: taskId
+description: Идентификатор задачи
+in: path
+required: true
+schema:
+  type: integer
+  format: int64
