@@ -38,6 +38,17 @@ requestBody:
 responses:
   '200':
     description: OK
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Проект
+          properties:
+            id:
+              description: Идентификатор проекта
+              type: integer
+              format: int64
+              example: 1
   '400':
     description: Ошибка
     content:

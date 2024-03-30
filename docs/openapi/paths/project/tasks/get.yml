@@ -1,0 +1,44 @@
+summary: Получить задачи проекта
+description: |
+  Получить задачи проекта
+
+  *Доступна всем авторизованным пользователям*
+
+tags:
+  - Задачи
+  - Проекты
+security:
+  - bearerAuth: []
+parameters:
+  - $ref: ../../common/project/project_id.yml
+  - name: notFinal
+    description: Не получать завершённые задачи
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - $ref: ../../common/pagination/page.yml
+  - $ref: ../../common/pagination/per_page.yml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            statuses:
+              $ref: ../../common/statuses/statuses.yml
+            tasks:
+              description: Распределение задач по статусам
+              type: array
+              items:
+                $ref: ../../common/task/task.yml
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: ../../common/error.yml
+  '401':
+    description: Ошибка аутентификации

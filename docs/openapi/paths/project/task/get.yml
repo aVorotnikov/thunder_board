@@ -1,0 +1,29 @@
+summary: Получить информацию о задаче
+description: |
+  Получить информацию о задаче
+
+  *Доступна всем авторизованным пользователям*
+
+tags:
+  - Задачи
+  - Проекты
+security:
+  - bearerAuth: []
+parameters:
+  - $ref: ../../common/project/project_id.yml
+  - $ref: ../../common/task/task_id.yml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../../common/task/task_no_id.yml
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: ../../common/error.yml
+  '401':
+    description: Ошибка аутентификации

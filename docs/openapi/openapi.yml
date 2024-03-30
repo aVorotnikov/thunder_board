@@ -24,22 +24,24 @@ paths:
   /users:
     get:
       $ref: paths/users/get.yml
+  /user:
+    post:
+      $ref: paths/user/post.yml
   /user/{userId}:
     get:
       $ref: paths/user/get.yml
-    post:
-      $ref: paths/user/post.yml
     delete:
       $ref: paths/user/delete.yml
 
   /projects:
     get:
       $ref: paths/projects/get.yml
+  /project:
+    post:
+      $ref: paths/project/post.yml
   /project/{projectId}:
     get:
       $ref: paths/project/get.yml
-    post:
-      $ref: paths/project/post.yml
     patch:
       $ref: paths/project/patch.yml
   /project/{projectId}/user/{userId}:
@@ -47,15 +49,17 @@ paths:
       $ref: paths/project/user/put.yml
     delete:
       $ref: paths/project/user/delete.yml
-
-  /tasks:
-    $ref: paths/tasks/get.yml
-  /task:
-    $ref: paths/tasks/get_task.yml
-  /tasks/add:
-    $ref: paths/tasks/add.yml
-  /tasks/change:
-    $ref: paths/tasks/change.yml
+  /project/{projectId}/tasks:
+    get:
+      $ref: paths/project/tasks/get.yml
+  /project/{projectId}/task:
+    post:
+      $ref: paths/project/task/post.yml
+  /project/{projectId}/task/{taskId}:
+    get:
+      $ref: paths/project/task/get.yml
+    patch:
+      $ref: paths/project/task/patch.yml
 
 components:
   securitySchemes:
