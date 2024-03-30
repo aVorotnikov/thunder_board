@@ -18,8 +18,3 @@ properties:
     description: Является ли пользователь администратором
     type: boolean
     example: false
-  id:
-    description: Идентификатор пользователя
-    type: integer
-    format: int64
-    example: 1

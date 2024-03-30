@@ -1,48 +1,47 @@
-get:
-  summary: Получить список пользователей
-  description: |
-    Получить список пользователей
+summary: Получить список пользователей
+description: |
+  Получить список пользователей
 
-    *Доступна всем авторизованным пользователям*
+  *Доступна всем авторизованным пользователям*
 
-  tags:
-    - Учётные записи
-  security:
-    - bearerAuth: []
-  parameters:
-    - name: onlyAdmins
-      description: Получить только адимнистраторов
-      in: query
-      required: false
-      schema:
-        type: boolean
-    - $ref: ../common/pattern.yml
-    - name: project
-      description: Имя проекта
-      in: query
-      required: false
-      schema:
-        type: string
-    - $ref: ../common/pagination/page.yml
-    - $ref: ../common/pagination/per_page.yml
-  responses:
-    '200':
-      description: OK
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              users:
-                description: Список пользователей
-                type: array
-                items:
-                  $ref: ../common/user/user.yml
-    '400':
-      description: Ошибка
-      content:
-        application/json:
-          schema:
-            $ref: ../common/error.yml
-    '401':
-      description: Ошибка аутентификации
+tags:
+  - Учётные записи
+security:
+  - bearerAuth: []
+parameters:
+  - name: onlyAdmins
+    description: Получить только администраторов
+    in: query
+    required: false
+    schema:
+      type: boolean
+  - $ref: ../common/pattern.yml
+  - name: project
+    description: Имя проекта
+    in: query
+    required: false
+    schema:
+      type: string
+  - $ref: ../common/pagination/page.yml
+  - $ref: ../common/pagination/per_page.yml
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            users:
+              description: Список пользователей
+              type: array
+              items:
+                $ref: ../common/user/user.yml
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: ../common/error.yml
+  '401':
+    description: Ошибка аутентификации
