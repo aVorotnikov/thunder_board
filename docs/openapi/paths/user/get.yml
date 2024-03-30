@@ -16,7 +16,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../common/user/user_for_projects.yml
+          $ref: ../common/user/user_no_id.yml
   '400':
     description: Ошибка
     content:
