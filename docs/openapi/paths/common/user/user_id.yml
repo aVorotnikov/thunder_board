@@ -1,4 +1,4 @@
-name: id
+name: userId
 description: Идентификатор пользователя
 in: path
 required: true

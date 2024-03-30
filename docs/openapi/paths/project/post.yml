@@ -1,0 +1,48 @@
+summary: Добавить проект
+description: |
+  Добавить проект
+
+  *Доступна администраторам*
+
+tags:
+  - Проекты
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        description: Проект
+        required:
+          - name
+          - description
+          - users
+          - statuses
+        properties:
+          name:
+            description: Имя проекта
+            type: string
+            example: Первый проект
+          description:
+            description: Описание проекта
+            type: string
+            example: Проект несения добра
+          users:
+            description: Члены команды проекта
+            type: array
+            items:
+              $ref: ../common/user/user_for_projects.yml
+          statuses:
+            $ref: ../common/statuses/statuses.yml
+responses:
+  '200':
+    description: OK
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: "../common/error.yml"
+  '401':
+    description: Ошибка аутентификации
