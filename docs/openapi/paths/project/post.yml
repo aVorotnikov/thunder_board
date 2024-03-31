@@ -36,8 +36,10 @@ requestBody:
           statuses:
             $ref: ../common/statuses/statuses.yml
 responses:
-  '200':
+  '201':
     description: OK
+    headers:
+      $ref: ../common/location.yml
     content:
       application/json:
         schema:

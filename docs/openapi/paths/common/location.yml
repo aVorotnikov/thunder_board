@@ -1,0 +1,6 @@
+Location:
+  description: Идентификатор созданного ресурса
+  schema:
+    type: integer
+    format: int64
+  example: 1
