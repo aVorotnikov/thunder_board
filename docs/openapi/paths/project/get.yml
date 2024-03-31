@@ -16,7 +16,50 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../common/project/project_no_id.yml
+          type: object
+          description: Проект
+          required:
+            - name
+            - description
+            - statuses
+            - users
+          properties:
+            name:
+              description: Имя проекта
+              type: string
+              example: Первый проект
+            description:
+              description: Описание проекта
+              type: string
+              example: Проект несения добра
+            statuses:
+              $ref: ../common/statuses/statuses.yml
+            users:
+              description: Члены команды проекта
+              type: array
+              items:
+                type: object
+                description: Исполнитель
+                properties:
+                  name:
+                    description: Имя пользователя
+                    type: string
+                    example: Иванов Иван Иванович
+                  email:
+                    description: Адрес электронной почты пользователя
+                    type: string
+                    format: email
+                    example: ivanov.ii@org.org
+                  role:
+                    description: Роль пользователя
+                    type: string
+                    $ref: ../common/user/role.yml
+                    example: manager
+                  id:
+                    description: Идентификатор пользователя
+                    type: integer
+                    format: int64
+                    example: 1
   '400':
     description: Ошибка
     content:
