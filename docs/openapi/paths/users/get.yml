@@ -16,12 +16,13 @@ parameters:
     schema:
       type: boolean
   - $ref: ../common/pattern.yml
-  - name: project
-    description: Имя проекта
+  - name: projectId
+    description: Идентификатор проекта
     in: query
     required: false
     schema:
-      type: string
+      type: integer
+      format: int64
   - $ref: ../common/pagination/page.yml
   - $ref: ../common/pagination/per_page.yml
 responses:
