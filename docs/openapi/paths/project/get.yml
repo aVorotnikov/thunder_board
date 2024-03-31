@@ -25,3 +25,5 @@ responses:
           $ref: ../common/error.yml
   '401':
     description: Ошибка аутентификации
+  '404':
+    description: Нет проекта с таким идентификатором

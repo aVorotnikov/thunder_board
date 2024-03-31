@@ -18,6 +18,8 @@ responses:
     content:
       application/json:
         schema:
-          $ref: "../common/error.yml"
+          $ref: ../common/error.yml
   '401':
     description: Ошибка аутентификации
+  '404':
+    description: Нет пользователя с таким идентификатором
