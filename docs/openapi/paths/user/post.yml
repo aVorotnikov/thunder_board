@@ -38,8 +38,10 @@ requestBody:
             type: string
             example: Password1_
 responses:
-  '200':
+  '201':
     description: OK
+    headers:
+      $ref: ../common/location.yml
     content:
       application/json:
         schema:

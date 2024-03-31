@@ -51,8 +51,10 @@ requestBody:
             format: int64
             example: 0
 responses:
-  '200':
+  '201':
     description: OK
+    headers:
+      $ref: ../../common/location.yml
     content:
       application/json:
         schema:
