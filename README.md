@@ -28,7 +28,7 @@ npm install
 ```sh
 cd api
 python3 -m venv venv
-venv/bin/activate
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -39,7 +39,7 @@ npm start
 ```
 Запуск API-сервера (из корня проекта):
 ```sh
-npm start-api
+npm run start-api
 ```
 
 Фронтенд запускается на порте 3000 и проксирует запросы API-серверу на порт 5000.
@@ -47,5 +47,5 @@ npm start-api
 ## Деплой
 Сборка бандла фронтенда:
 ```sh
-npm build
+npm run build
 ```
