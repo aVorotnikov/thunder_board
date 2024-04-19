@@ -1,0 +1,17 @@
+.board-row {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.board-column {
+    background-color: #EFEFEF;
+    border-radius: 10px;
+    -ms-flex: 0 0 230px;
+    flex: 0 0 230px;
+}
+
+.column-name {
+    width: 250px;
+    text-align: justify;
+    padding-left: 10px;
+}
