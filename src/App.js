@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "./components/NavBar"
+import TasksFilter from "./components/TasksFilter";
+import Board from "./components/Board";
 
 import logo from './logo.png';
 import './App.css';
@@ -24,7 +27,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <NavBar />
+      <TasksFilter />
+      <Board />
+     {/*<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
@@ -36,7 +42,7 @@ function App() {
         </a>
         <p>Boards list: {data.boards}</p>
         <p>Response status code: {data.status}</p>
-      </header>
+      </header>*/}
     </div>
   );
 }
