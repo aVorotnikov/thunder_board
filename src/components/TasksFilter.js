@@ -6,7 +6,8 @@ import Select from 'react-select';
 class TasksFilter extends React.Component {
     render() {
         return (
-            <div className="d-flex flex-row justify-content-between" style={{ marginTop: "10px" }}>
+            <div className="d-flex flex-row justify-content-between" style={{ marginTop: "10px", height: "38px" }}>
+                <h4 style={{ marginLeft: "10px" }}>Задачи проекта {this.props.projectName}</h4>
                 <button style={{ border: 0, background: "transparent", marginLeft: "30px" }}>
                     <PlusSquare size={30} />
                 </button>
