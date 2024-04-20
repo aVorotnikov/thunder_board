@@ -20,13 +20,13 @@ class NavBar extends React.Component {
                                     Доска
                                 </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a className="dropdown-item" href="#">Другой проект</a>
-                                    <a className="dropdown-item" href="#">Ещё один проект</a>
-                                    <a className="dropdown-item" href="#">И ещё один</a>
+                                    <a className="dropdown-item" href="/board/2">Другой проект</a>
+                                    <a className="dropdown-item" href="/board/3">Ещё один проект</a>
+                                    <a className="dropdown-item" href="/board/4">И ещё один</a>
                                 </div>
                             </div>
-                            <a className="nav-item nav-link" href="#">Проекты</a>
-                            <a className="nav-item nav-link" href="#">Профиль</a>
+                            <a className="nav-item nav-link" href="/projects/">Проекты</a>
+                            <a className="nav-item nav-link" href="/profile/">Профиль</a>
                         </div>
                     </div>
                 </div>
