@@ -4,7 +4,7 @@ import './index.css';
 import BoardPage from './pages/BoardPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ProfilePage from './pages/ProfilePage';
-import LoginForm from './pages/Login';
+import LoginPage from './pages/LoginPage';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
@@ -17,7 +17,7 @@ const router = createBrowserRouter(
     <Route>
       <Route
         path="login"
-        element={<LoginForm />}
+        element={<LoginPage />}
       />
       <Route
         path="board/:projectId"
