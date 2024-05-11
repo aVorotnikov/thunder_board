@@ -1,63 +1,61 @@
 /* Script to create data base */
 
-PRAGMA foreign_keys = ON;
-
-CREATE TABLE IF NOT EXISTS User (
-    userId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+DROP TABLE IF EXISTS Users CASCADE;
+CREATE TABLE Users (
+    userId SERIAL PRIMARY KEY,
     userName TEXT NOT NULL,
     userEmail TEXT NOT NULL UNIQUE,
-    userPassword TEXT NOT NULL,
+    userPasswordHash TEXT NOT NULL,
     userIsAdmin BOOLEAN NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Project (
-    projectId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+DROP TABLE IF EXISTS Projects CASCADE;
+CREATE TABLE Projects (
+    projectId SERIAL PRIMARY KEY,
     projectName TEXT NOT NULL UNIQUE,
     projectDescription TEXT NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Role (
-    roleId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+DROP TABLE IF EXISTS Roles CASCADE;
+CREATE TABLE Roles (
+    roleId SERIAL PRIMARY KEY,
     roleName TEXT NOT NULL UNIQUE
 );
-INSERT OR IGNORE INTO Role (roleName) VALUES ("manager"), ("participant");
+INSERT INTO Roles (roleName) VALUES ('manager'), ('participant');
 
-CREATE TABLE IF NOT EXISTS UserProject (
-    userProjectId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
-    userId INTEGER NOT NULL,
-    projectId INTEGER NOT NULL,
-    roleId INTEGER NOT NULL,
-    FOREIGN KEY(userId) REFERENCES User(userId),
-    FOREIGN KEY(projectId) REFERENCES Project(projectId),
-    FOREIGN KEY(roleId) REFERENCES Role(roleId)
+DROP TABLE IF EXISTS UsersProjects CASCADE;
+CREATE TABLE UsersProjects (
+    userProjectId SERIAL PRIMARY KEY,
+    userId INTEGER NOT NULL REFERENCES Users(userId) ON DELETE RESTRICT,
+    projectId INTEGER NOT NULL REFERENCES Projects(projectId) ON DELETE RESTRICT,
+    roleId INTEGER NOT NULL REFERENCES Roles(roleId) ON DELETE RESTRICT
 );
 
-CREATE TABLE IF NOT EXISTS StatusType (
-    statusTypeId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+DROP TABLE IF EXISTS StatusTypes CASCADE;
+CREATE TABLE StatusTypes (
+    statusTypeId SERIAL PRIMARY KEY,
     statusTypeName TEXT NOT NULL UNIQUE
 );
-INSERT OR IGNORE INTO StatusType (statusTypeName) VALUES ("initial"), ("intermediate"), ("final");
+INSERT INTO StatusTypes (statusTypeName) VALUES ('initial'), ('intermediate'), ('final');
 
-CREATE TABLE IF NOT EXISTS Status (
-    statusId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+DROP TABLE IF EXISTS Statuses CASCADE;
+CREATE TABLE Statuses (
+    statusId SERIAL PRIMARY KEY,
     statusName TEXT NOT NULL,
     statusNumber INTEGER NOT NULL,
-    projectId INTEGER NOT NULL,
-    statusTypeId INTEGER NOT NULL,
-    FOREIGN KEY(projectId) REFERENCES Project(projectId),
-    FOREIGN KEY(statusTypeId) REFERENCES StatusType(statusTypeId),
+    projectId INTEGER NOT NULL REFERENCES Projects(projectId) ON DELETE RESTRICT,
+    statusTypeId INTEGER NOT NULL REFERENCES StatusTypes(statusTypeId) ON DELETE RESTRICT,
     UNIQUE(statusName, projectId),
     UNIQUE(statusNumber, projectId)
 );
 
-CREATE TABLE IF NOT EXISTS Task (
-    taskId INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+DROP TABLE IF EXISTS Tasks CASCADE;
+CREATE TABLE Tasks (
+    taskId SERIAL PRIMARY KEY,
     taskName TEXT NOT NULL,
     taskDescription TEXT NOT NULL,
     taskTimeEstimation INTEGER NOT NULL,
     taskTimeSpent INTEGER DEFAULT 0 NOT NULL,
-    userId INTEGER NOT NULL,
-    statusId INTEGER NOT NULL,
-    FOREIGN KEY(userId) REFERENCES User(userId),
-    FOREIGN KEY(statusId) REFERENCES Status(statusId)
+    userId INTEGER NOT NULL REFERENCES Users(userId) ON DELETE RESTRICT,
+    statusId INTEGER NOT NULL REFERENCES Statuses(statusId) ON DELETE RESTRICT
 );

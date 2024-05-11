@@ -32,6 +32,25 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### База данных
+Установка PostgreSQL:
+```sh
+sudo apt install postgresql
+```
+
+Конфигурирование PostgreSQL. В командной оболочке PostgreSQL(`sudo -u postgres psql`):
+```psql
+CREATE DATABASE thunder_board;
+\password postgres # Ввести пароль (aaaaaa)
+```
+
+Создание БД:
+```sh
+export PGPASSWORD=aaaaaa
+psql -U postgres -d thunder_board -a -f ./sql/create_db.sql
+psql -U postgres -d thunder_board -a -f ./sql/test_data/insert.sql # Вставить тестовые данные
+```
+
 ## Запуск проекта в режиме разработки:
 Запуск фронта:
 ```sh

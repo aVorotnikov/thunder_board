@@ -1,7 +1,7 @@
 /* Select statuses from project */
 SELECT statusName, statusNumber, statusTypeName
-    FROM Status
-    LEFT JOIN Project ON Status.projectId = Project.projectId
-    LEFT JOIN StatusType ON StatusType.statusTypeId = Status.statusTypeId
-    WHERE projectName = @projectName
+    FROM Statuses
+    LEFT JOIN Projects ON Statuses.projectId = Projects.projectId
+    LEFT JOIN StatusTypes ON StatusTypes.statusTypeId = Statuses.statusTypeId
+    WHERE Projects.projectId = @projectId
     ORDER BY statusNumber;
