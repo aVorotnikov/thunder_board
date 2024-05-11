@@ -1,2 +1,2 @@
 /* Select user password */
-SELECT userPassword FROM User WHERE userEmail = @userEmail;
+SELECT userPasswordHash FROM Users WHERE userEmail = @userEmail;

@@ -1,2 +1,2 @@
 /* Select all users */
-SELECT userName, userEmail, userIsAdmin FROM User;
+SELECT userId, userName, userEmail, userIsAdmin FROM Users;
