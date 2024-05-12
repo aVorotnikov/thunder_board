@@ -43,9 +43,46 @@ def get_user_info(user_id):
         return res
 
 
-def get_users(page, per_page):
+def get_users(only_admins, page, per_page, pattern):
     with get_db().cursor() as cursor:
-        cursor.execute('SELECT userId, userName, userEmail, userIsAdmin FROM Users LIMIT %s OFFSET %s', (per_page, page * per_page))
+        query = 'SELECT userId, userName, userEmail, userIsAdmin FROM Users {} LIMIT %s OFFSET %s'
+        where_string = ''
+        if only_admins == True or pattern is not None:
+            cond = 0
+            where_string = 'WHERE '
+            if only_admins == True:
+                where_string = where_string + 'userIsAdmin=TRUE '
+                cond = cond + 1
+            if pattern is not None:
+                if 0 != cond:
+                    where_string += 'AND '
+                where_string = where_string + "(userName LIKE %s OR userEmail LIKE %s) "
+                cond = cond + 1
+        if pattern is None:
+            cursor.execute(query.format(where_string), (per_page, page * per_page))
+        else:
+            cursor.execute(query.format(where_string), (pattern, pattern, per_page, page * per_page))
+        res = cursor.fetchall()
+        return res
+
+
+def get_users_with_project(only_admins, page, per_page, pattern, project_id):
+    with get_db().cursor() as cursor:
+        query = 'SELECT Users.userId, userName, userEmail, userIsAdmin ' \
+            'FROM Users ' \
+            'LEFT JOIN UsersProjects ON UsersProjects.userId=Users.userId ' \
+            'WHERE UsersProjects.projectId=%s {} ' \
+            'LIMIT %s OFFSET %s'
+        where_string = ''
+        if only_admins == True or pattern is not None:
+            if only_admins == True:
+                where_string = where_string + 'AND userIsAdmin=TRUE '
+            if pattern is not None:
+                where_string = where_string + "AND (userName LIKE %s OR userEmail LIKE %s) "
+        if pattern is None:
+            cursor.execute(query.format(where_string), (project_id, per_page, page * per_page))
+        else:
+            cursor.execute(query.format(where_string), (project_id, pattern, pattern, per_page, page * per_page))
         res = cursor.fetchall()
         return res
 

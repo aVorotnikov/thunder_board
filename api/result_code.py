@@ -7,6 +7,7 @@ from enum import Enum
 class ResultCode(Enum):
     InternalError = 100
     NotSupported = 101
+    IncorrectData = 102
 
 
 def GetResultCodeTextDescription(rc):
@@ -14,6 +15,8 @@ def GetResultCodeTextDescription(rc):
         return "Внутренняя ошибка сервера"
     elif ResultCode.NotSupported == rc:
         return "Команда не поддерживается"
+    elif ResultCode.IncorrectData == rc:
+        return "Некорретные данные"
     return "Неизвестный код"
 
 
