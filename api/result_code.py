@@ -5,7 +5,7 @@ from enum import Enum
 
 
 class ResultCode(Enum):
-    InternalError = 100,
+    InternalError = 100
     NotSupported = 101
 
 
