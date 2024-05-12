@@ -1,14 +1,61 @@
+#!/usr/bin/python3
+
 from flask import Flask
+from flask import jsonify
+from flask import request
+
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
+from flask_jwt_extended import JWTManager
+
+from hash import get_hashed_password, check_password
+from db import *
+import config
+
+
+def authenticate(email, password):
+    res = get_password_hash(email)
+    if res is None:
+        return
+    user_id, user_password_hash = res
+    if check_password(password, user_password_hash):
+        return user_id, user_password_hash
+
+
+def identity(payload):
+    user_id = payload['identity']
+    return userid_table.get(user_id, None)
+
 
 app = Flask(__name__)
+app.config["JWT_SECRET_KEY"] = config.SECRET_KEY
+jwt = JWTManager(app)
+
+
+@app.teardown_appcontext
+def down(e=None):
+    close_db(e)
+
 
 @app.post('/log-in')
 def log_in():
-    return "Request to login"
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    print(email, password)
+    res = get_password_hash(email)
+    if res is None:
+        return "", 401
+    user_id, user_password_hash = res
+    if not check_password(password, user_password_hash):
+        return "", 401
+    access_token = create_access_token(identity=[user_id, email])
+    return jsonify(token=access_token)
 
 @app.get('/log-out')
+@jwt_required()
 def log_out():
-    return "Request to logout"
+    return f"Request to logout: {get_jwt_identity()}"
 
 @app.get('/users')
 def get_users():
