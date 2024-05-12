@@ -2,10 +2,30 @@
 
 -- Insert users
 INSERT INTO Users (userName, userEmail, userPasswordHash, userIsAdmin) VALUES
-    ('Иванов Иван Иванович', 'ivanov@org.org', 'aaAA00__', TRUE),
-    ('Петров Петр Петрович', 'petrov@org.org', 'bbBB11--', FALSE),
-    ('Сергеев Сергей Сергеевич', 'sergeev@org.org', 'ccCC22;;', TRUE),
-    ('Виталиев Виталий Виталиевич', 'vitaliev@org.org', 'ddDD33::', FALSE);
+    (
+        'Иванов Иван Иванович',
+        'ivanov@org.org',
+        '$2b$12$tCNED8vgoroj/CwgckdBPeW66axzwMfqQMLvFVawDa1gwa3/LPCpG', -- password 'aaAA00__'
+        TRUE
+    ),
+    (
+        'Петров Петр Петрович',
+        'petrov@org.org',
+        '$2b$12$VJept1kJz6gppfvcZEy6Tec8qc7TYNPF4Dsr0YeW3KL75TsMVlHmK', -- password 'bbBB11--'
+        FALSE
+    ),
+    (
+        'Сергеев Сергей Сергеевич',
+        'sergeev@org.org',
+        '$2b$12$qpBkrHSwdC3fMOjoOMxJKOAJ6.E6aHgouFAHHt8Bd/WUDhvqiOtYK', -- password 'ccCC22;;'
+        TRUE
+    ),
+    (
+        'Виталиев Виталий Виталиевич',
+        'vitaliev@org.org',
+        '$2b$12$plfZWvPXA9zLzHwBKGvhz..Ko8dveqXY2a4xizrmy8uQMZh3HPSbC', -- password 'ddDD33::'
+        FALSE
+    );
 
 -- Insert projects
 INSERT INTO Projects (projectName, projectDescription) VALUES
