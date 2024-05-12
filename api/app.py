@@ -100,7 +100,7 @@ def add_project():
 @app.get('/project/<int:projectId>')
 @jwt_required()
 def get_project(projectId):
-    return f"Request to get project: {projectId}"
+    return commands.project.get(projectId)
 
 @app.patch('/project/<int:projectId>')
 @jwt_required()
