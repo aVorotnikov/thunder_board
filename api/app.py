@@ -10,20 +10,6 @@ from result_code import *
 from checkers.users import *
 
 
-def authenticate(email, password):
-    res = get_password_hash(email)
-    if res is None:
-        return
-    user_id, user_password_hash = res
-    if check_password(password, user_password_hash):
-        return user_id, user_password_hash
-
-
-def identity(payload):
-    user_id = payload['identity']
-    return userid_table.get(user_id, None)
-
-
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = config.SECRET_KEY
 jwt = JWTManager(app)
