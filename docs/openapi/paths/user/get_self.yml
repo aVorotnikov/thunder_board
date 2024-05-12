@@ -1,0 +1,25 @@
+summary: Получить текущего пользователя
+description: |
+  Получить текущего пользователя
+
+  *Доступна всем авторизованным пользователям*
+
+tags:
+  - Учётные записи
+security:
+  - bearerAuth: []
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          $ref: ../common/user/user.yml
+  '400':
+    description: Ошибка
+    content:
+      application/json:
+        schema:
+          $ref: ../common/error.yml
+  '401':
+    description: Ошибка аутентификации
