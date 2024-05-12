@@ -80,7 +80,17 @@ def delete_user(userId):
 @app.get('/projects')
 @jwt_required()
 def get_projects():
-    return "Request to get projects"
+    args = request.args
+    pattern = None if "pattern" not in args else args.get("pattern", type=str)
+    if "users" not in args:
+        users = None
+    else:
+        users = [int(userId) for userId in request.args.getlist("users")]
+    page = args.get("page", default=0, type=int)
+    per_page = args.get("per_page", default=10, type=int)
+    if page < 0 or per_page <= 0 or per_page > 100:
+        return GetResponse(ResultCode.IncorrectData)
+    return commands.projects.get(page, per_page, pattern, users)
 
 @app.post('/project')
 @jwt_required()

@@ -112,3 +112,39 @@ def insert_user(name, email, is_admin, password_hash):
     with get_db().cursor() as cursor:
         cursor.execute('INSERT INTO Users (userName, userEmail, userPasswordHash, userIsAdmin) VALUES '
             '(%s, %s, %s, %s)', (name, email, password_hash, is_admin))
+
+
+def get_projects(page, per_page, pattern):
+    with get_db().cursor() as cursor:
+        query = 'SELECT projectId, projectName, projectDescription FROM Projects {} LIMIT %s OFFSET %s'
+        where_string = ''
+        if pattern is not None:
+            where_string = 'WHERE (projectName LIKE %s OR projectDescription LIKE %s) '
+        if pattern is None:
+            cursor.execute(query.format(where_string), (per_page, page * per_page))
+        else:
+            cursor.execute(query.format(where_string), (pattern, pattern, per_page, page * per_page))
+        res = cursor.fetchall()
+        return res
+
+
+def get_projects_with_users(page, per_page, pattern, users):
+    with get_db().cursor() as cursor:
+        query = f'SELECT innerSelect.pId, innerSelect.projectName, innerSelect.projectDescription FROM (' \
+            'SELECT Projects.projectId AS pId, projectName, projectDescription, COUNT(UsersProjects.userId) AS userCount ' \
+            'FROM Projects ' \
+            'LEFT JOIN UsersProjects ON UsersProjects.projectId=Projects.projectId ' \
+            f'WHERE UsersProjects.userId=ANY(ARRAY{str(users)}) ' \
+            '{} ' \
+            'GROUP BY UsersProjects.projectId, pId, projectName, projectDescription ' \
+            'LIMIT %s OFFSET %s) innerSelect ' \
+            'WHERE userCount=%s'
+        where_string = ''
+        if pattern is not None:
+            where_string = 'AND "(projectName LIKE %s OR projectDescription LIKE %s) '
+        if pattern is None:
+            cursor.execute(query.format(where_string), (per_page, page * per_page, len(set(users))))
+        else:
+            cursor.execute(query.format(where_string), (pattern, pattern, per_page, page * per_page, len(set(users))))
+        res = cursor.fetchall()
+        return res
