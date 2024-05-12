@@ -148,3 +148,38 @@ def get_projects_with_users(page, per_page, pattern, users):
             cursor.execute(query.format(where_string), (pattern, pattern, per_page, page * per_page, len(set(users))))
         res = cursor.fetchall()
         return res
+
+
+def get_project_info(project_id):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT projectId, projectName, projectDescription FROM Projects WHERE projectId=%s', (project_id,))
+        res = cursor.fetchone()
+        if not res:
+            return None
+        return res
+
+
+def get_statuses(project_id):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT Statuses.statusName, StatusTypes.statusTypeName '
+            'FROM Statuses '
+            'LEFT JOIN StatusTypes ON StatusTypes.statusTypeId=Statuses.statusTypeId '
+            'WHERE Statuses.projectId=%s '
+            'ORDER BY Statuses.statusNumber', (project_id,))
+        res = cursor.fetchall()
+        if not res:
+            return None
+        return res
+
+
+def get_project_team(project_id):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT Users.userId, Users.userName, Users.userEmail, Roles.roleName '
+            'FROM UsersProjects '
+            'LEFT JOIN Users ON Users.userId=UsersProjects.userId '
+            'LEFT JOIN Roles ON Roles.roleId=UsersProjects.roleId '
+            'WHERE UsersProjects.projectId=%s', (project_id,))
+        res = cursor.fetchall()
+        if not res:
+            return None
+        return res
