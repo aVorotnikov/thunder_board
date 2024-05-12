@@ -24,7 +24,7 @@ def down(e=None):
 def log_in():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    res = db.get_password_hash(email)
+    res = db.get_user_info_by_email(email)
     if res is None:
         return "", 401
     user_id, user_password_hash = res
@@ -48,13 +48,19 @@ def get_users():
     page = args.get("page", default=0, type=int)
     per_page = args.get("per_page", default=10, type=int)
     if page < 0 or per_page <= 0 or per_page > 100:
-        return GetResponse(ResultCode.NotSupported)
+        return GetResponse(ResultCode.IncorrectData)
     return commands.users.get(only_admins, page, per_page, pattern, project_id)
 
 @app.post('/user')
 @jwt_required()
 def add_user():
-    return "Request to add user"
+    if not user_is_admin(get_jwt_identity()[0]):
+        return GetResponse(ResultCode.OnlyAdmins)
+    name = request.json.get("name", None)
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    is_admin = request.json.get("isAdmin", None)
+    return commands.user.post(name, email, is_admin, password)
 
 @app.get('/user')
 @jwt_required()

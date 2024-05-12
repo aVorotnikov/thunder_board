@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 
+from flask import jsonify, make_response
 from enum import Enum
 import db
 
-from flask import jsonify
 from result_code import *
+from hash import get_hashed_password
 
 
 def get(user_id):
@@ -28,3 +29,17 @@ def get_self(user_id):
             "email": res[2],
             "isAdmin": res[3]
         })
+
+
+def post(name, email, is_admin, password):
+    if db.get_user_info_by_email(email) is not None:
+        return GetResponse(ResultCode.EmailAlreadyExists)
+    db.insert_user(name, email, is_admin, get_hashed_password(password))
+    res = db.get_user_info_by_email(email)
+    if res is None:
+        return GetResponse(ResultCode.InternalError)
+    response = make_response(jsonify({
+            "id": res[0]
+        }))
+    response.headers['Location'] = res[0]
+    return response
