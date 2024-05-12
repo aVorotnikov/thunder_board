@@ -12,7 +12,7 @@ def get_db():
         password = config.DB_PASSWORD
         host = config.DB_HOST
         port = config.DB_PORT
-        g.db = psycopg.connect(dbname=name, user=user, password=password, host=host, port=port)
+        g.db = psycopg.connect(dbname=name, user=user, password=password, host=host, port=port, autocommit=True)
     return g.db
 
 
@@ -25,7 +25,7 @@ def close_db(e=None):
         db.close()
 
 
-def get_password_hash(user_email):
+def get_user_info_by_email(user_email):
     with get_db().cursor() as cursor:
         cursor.execute('SELECT userId, userPasswordHash FROM Users WHERE userEmail=%s', (user_email,))
         res = cursor.fetchone()
@@ -106,3 +106,9 @@ def get_task_owner(task_id):
         if not res:
             return None
         return res
+
+
+def insert_user(name, email, is_admin, password_hash):
+    with get_db().cursor() as cursor:
+        cursor.execute('INSERT INTO Users (userName, userEmail, userPasswordHash, userIsAdmin) VALUES '
+            '(%s, %s, %s, %s)', (name, email, password_hash, is_admin))

@@ -8,6 +8,8 @@ class ResultCode(Enum):
     InternalError = 100
     NotSupported = 101
     IncorrectData = 102
+    EmailAlreadyExists = 103
+    OnlyAdmins = 104
 
 
 def GetResultCodeTextDescription(rc):
@@ -17,6 +19,10 @@ def GetResultCodeTextDescription(rc):
         return "Команда не поддерживается"
     elif ResultCode.IncorrectData == rc:
         return "Некорретные данные"
+    elif ResultCode.EmailAlreadyExists == rc:
+        return "Такая почта уже есть в системе"
+    elif ResultCode.OnlyAdmins == rc:
+        return "Доступно только администраторам"
     return "Неизвестный код"
 
 
