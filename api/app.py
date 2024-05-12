@@ -4,9 +4,10 @@ from flask import Flask, jsonify, request
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
 
 from hash import get_hashed_password, check_password
-from db import *
+import db
 import config
 from result_code import *
+from checkers.users import *
 
 
 def authenticate(email, password):
@@ -30,15 +31,14 @@ jwt = JWTManager(app)
 
 @app.teardown_appcontext
 def down(e=None):
-    close_db(e)
+    db.close_db(e)
 
 
 @app.post('/log-in')
 def log_in():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    print(email, password)
-    res = get_password_hash(email)
+    res = db.get_password_hash(email)
     if res is None:
         return "", 401
     user_id, user_password_hash = res

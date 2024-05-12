@@ -48,3 +48,24 @@ def get_users(page, per_page):
         cursor.execute('SELECT userId, userName, userEmail, userIsAdmin FROM Users LIMIT %s OFFSET %s', (per_page, page * per_page))
         res = cursor.fetchall()
         return res
+
+
+def get_user_role(user_id, project_id):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT Roles.roleName '
+            'FROM UsersProjects '
+            'LEFT JOIN Roles ON UsersProjects.roleId = Roles.roleId '
+            'WHERE userId=%s AND projectId=%s', (user_id, project_id))
+        res = cursor.fetchone()
+        if not res:
+            return None
+        return res
+
+
+def get_task_owner(task_id):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT userId FROM Tasks WHERE taskId=%s', (task_id,))
+        res = cursor.fetchone()
+        if not res:
+            return None
+        return res
