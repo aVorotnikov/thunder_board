@@ -59,12 +59,12 @@ def add_user():
 @app.get('/user')
 @jwt_required()
 def get_user_self():
-    return f"Request to get user: {get_jwt_identity()[0]}"
+    return commands.user.get_self(get_jwt_identity()[0])
 
 @app.get('/user/<int:userId>')
 @jwt_required()
 def get_user(userId):
-    return f"Request to get user: {userId}"
+    return commands.user.get(userId)
 
 @app.delete('/user/<int:userId>')
 @jwt_required()
