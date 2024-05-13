@@ -40,3 +40,8 @@ def post(name, description, users, statuses):
 def add_user(project_id, user_id, role):
     db.insert_user_in_project(project_id, user_id, role)
     return "", 200
+
+
+def update_project(project_id, name, desciption):
+    db.update_project(project_id, name, desciption)
+    return "", 200
