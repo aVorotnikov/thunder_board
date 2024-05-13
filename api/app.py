@@ -10,6 +10,7 @@ from result_code import *
 from checkers.users import *
 from checkers.projects import *
 from commands import *
+from status_types import *
 
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = config.SECRET_KEY
@@ -96,7 +97,43 @@ def get_projects():
 @app.post('/project')
 @jwt_required()
 def add_project():
-    return "Request to add project"
+    initiator_id = get_jwt_identity()[0]
+    if not user_is_admin(initiator_id):
+        return GetResponse(ResultCode.OnlyAdmins)
+    jsonContent = request.json
+    name = jsonContent.get("name", None)
+    if check_project_by_name(name):
+        return GetResponse(ResultCode.ProjectNameAlreadyExists)
+    description = jsonContent.get("description", None)
+
+    usersRaw = jsonContent.get("users", None)
+    users = []
+    hasManager = False
+    for user in usersRaw:
+        if not check_user(user["id"]):
+            return GetResponse(ResultCode.UnknownUser)
+        role = UserRole(user["role"])
+        if UserRole.Manager == role:
+            hasManager = True
+        users.append({"id": user["id"], "role": role})
+    if not hasManager:
+        return GetResponse(ResultCode.ProjectNeedsManager)
+
+    statusesRaw = jsonContent.get("statuses", None)
+    statuses = []
+    statusTypesInfo = {
+        StatusTypes.Initial: 0,
+        StatusTypes.Intermediate: 0,
+        StatusTypes.Final: 0
+    }
+    for status in statusesRaw:
+        statusType = StatusTypes(status["type"])
+        statusTypesInfo[statusType] += 1
+        statuses.append({"name": status["name"], "type": statusType})
+    if statusTypesInfo[StatusTypes.Initial] != 1 or statusTypesInfo[StatusTypes.Final] == 0:
+        return GetResponse(ResultCode.IncorrectStatuses)
+
+    return commands.project.post(name, description, users, statuses)
 
 @app.get('/project/<int:projectId>')
 @jwt_required()

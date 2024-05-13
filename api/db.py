@@ -332,3 +332,12 @@ def update_task(project_id, task_id, user_id, name, description, proposed_time, 
         if status_id is not None:
             print(status_id)
             cursor.execute('UPDATE Tasks SET statusId=%s WHERE taskId=%s', (status_id, task_id))
+
+def insert_project(name, description):
+    with get_db().cursor() as cursor:
+        cursor.execute('INSERT INTO Projects '
+            '(projectName, projectDescription) VALUES '
+            '(%s, %s) '
+            'RETURNING projectId',
+            (name, description))
+        return cursor.fetchone()[0]
