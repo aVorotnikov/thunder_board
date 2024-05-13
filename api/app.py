@@ -154,7 +154,7 @@ def add_task(projectId):
 @app.get('/project/<int:projectId>/task/<int:taskId>')
 @jwt_required()
 def get_task(projectId, taskId):
-    return f"Request to get task {taskId} to project {projectId}"
+    return commands.task.get(taskId, projectId)
 
 @app.patch('/project/<int:projectId>/task/<int:taskId>')
 @jwt_required()
