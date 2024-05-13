@@ -16,17 +16,12 @@ requestBody:
         type: object
         description: Задача
         required:
-          - project
           - name
           - description
           - userId
           - proposedTime
           - remainingTime
         properties:
-          project:
-            description: Имя проекта
-            type: string
-            example: Первый проект
           name:
             description: Имя задачи
             type: string
