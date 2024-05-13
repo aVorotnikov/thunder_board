@@ -31,3 +31,12 @@ def get(project_id):
             "role": user[3]
         })
     return jsonify(res)
+
+
+def post(name, description, users, statuses):
+    pass
+
+
+def add_user(project_id, user_id, role):
+    db.insert_user_in_project(project_id, user_id, role)
+    return "", 200

@@ -183,3 +183,50 @@ def get_project_team(project_id):
         if not res:
             return None
         return res
+
+
+def insert_project(name, description):
+    with get_db().cursor() as cursor:
+        cursor.execute('INSERT INTO Projects (projectName, projectDescription) VALUES (%s, %s)', (name, description))
+
+
+def get_project_id_by_name(project_name):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT projectId FROM Projects WHERE projectName=%s', (project_name,))
+        res = cursor.fetchone()
+        if not res:
+            return None
+        return res
+
+
+def get_status_type_id_by_name(status_type):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT statusTypeId FROM StatusTypes WHERE statusTypeName=%s', (status_type.value,))
+        res = cursor.fetchone()
+        if not res:
+            return None
+        return res[0]
+
+
+def get_role_id_by_name(user_role):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT roleId FROM Roles WHERE roleName=%s', (user_role.value,))
+        res = cursor.fetchone()
+        if not res:
+            return None
+        return res[0]
+
+
+def insert_statuses(project_id, statuses):
+    with get_db().cursor() as cursor:
+        number = 0
+        for status in statuses:
+            cursor.execute('INSERT INTO Statuses (statusName, statusNumber, projectId, statusTypeId) VALUES '
+                '(%s, %s, %s, %s)', (status["name"], number, project_id, get_status_type_id_by_name(status["type"])))
+            number = number + 1
+
+
+def insert_user_in_project(project_id, user_id, role):
+    with get_db().cursor() as cursor:
+        cursor.execute('INSERT INTO UsersProjects (userId, projectId, roleId) VALUES '
+            '(%s, %s, %s)', (user_id, project_id, get_role_id_by_name(role)))
