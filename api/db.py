@@ -176,6 +176,17 @@ def get_statuses(project_id):
         return res
 
 
+def get_status_id(project_id, status_name):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT Statuses.statusId '
+            'FROM Statuses '
+            'WHERE Statuses.projectId=%s AND Statuses.statusName=%s', (project_id, status_name))
+        res = cursor.fetchone()
+        if not res:
+            return None
+        return res[0]
+
+
 def get_project_team(project_id):
     with get_db().cursor() as cursor:
         cursor.execute('SELECT Users.userId, Users.userName, Users.userEmail, Roles.roleName '
@@ -240,14 +251,14 @@ def insert_user_in_project(project_id, user_id, role):
         return cursor.fetchone()[0]
 
 
-def update_project(project_id, name, desciption):
-    if name is None and desciption is None:
+def update_project(project_id, name, description):
+    if name is None and description is None:
         return
     with get_db().cursor() as cursor:
         if name is not None:
             cursor.execute('UPDATE Projects SET projectName=%s WHERE projectId=%s', (name, project_id))
-        if desciption is not None:
-            cursor.execute('UPDATE Projects SET projectDescription=%s WHERE projectId=%s', (desciption, project_id))
+        if description is not None:
+            cursor.execute('UPDATE Projects SET projectDescription=%s WHERE projectId=%s', (description, project_id))
 
 
 def get_tasks(project_id, page, per_page, not_final):
@@ -302,3 +313,22 @@ def insert_task(project_id, user_id, name, description, proposed_time, remaining
             'RETURNING taskId',
             (name, description, proposed_time, remaining_time, user_id, get_initial_state_id(project_id)))
         return cursor.fetchone()[0]
+
+
+def update_task(project_id, task_id, user_id, name, description, proposed_time, remaining_time, status_id):
+    if name is None and description is None:
+        return
+    with get_db().cursor() as cursor:
+        if user_id is not None:
+            cursor.execute('UPDATE Tasks SET userId=%s WHERE taskId=%s', (user_id, task_id))
+        if name is not None:
+            cursor.execute('UPDATE Tasks SET taskName=%s WHERE taskId=%s', (name, task_id))
+        if description is not None:
+            cursor.execute('UPDATE Tasks SET taskDescription=%s WHERE taskId=%s', (description, task_id))
+        if proposed_time is not None:
+            cursor.execute('UPDATE Tasks SET taskTimeEstimation=%s WHERE taskId=%s', (proposed_time, task_id))
+        if remaining_time is not None:
+            cursor.execute('UPDATE Tasks SET taskTimeSpent=%s WHERE taskId=%s', (remaining_time, task_id))
+        if status_id is not None:
+            print(status_id)
+            cursor.execute('UPDATE Tasks SET statusId=%s WHERE taskId=%s', (status_id, task_id))
