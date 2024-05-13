@@ -106,7 +106,17 @@ def get_project(projectId):
 @app.patch('/project/<int:projectId>')
 @jwt_required()
 def change_project(projectId):
-    return f"Request to change project: {projectId}"
+    if not check_project(projectId):
+        return "", 404
+    initiator_id = get_jwt_identity()[0]
+    if not user_is_admin(initiator_id) and UserRole.Manager != get_user_role(initiator_id, projectId):
+        return GetResponse(ResultCode.OnlyAdminsAndManagers)
+    jsonContent = request.json
+    name = None if "name" not in jsonContent else jsonContent.get("name", None)
+    if name is not None and check_project_by_name(name):
+        return GetResponse(ResultCode.ProjectNameAlreadyExists)
+    description = None if "description" not in jsonContent else jsonContent.get("description", None)
+    return commands.project.update_project(projectId, name, description)
 
 @app.put('/project/<int:projectId>/user/<int:userId>')
 @jwt_required()

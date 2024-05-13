@@ -196,7 +196,7 @@ def get_project_id_by_name(project_name):
         res = cursor.fetchone()
         if not res:
             return None
-        return res
+        return res[0]
 
 
 def get_status_type_id_by_name(status_type):
@@ -230,3 +230,13 @@ def insert_user_in_project(project_id, user_id, role):
     with get_db().cursor() as cursor:
         cursor.execute('INSERT INTO UsersProjects (userId, projectId, roleId) VALUES '
             '(%s, %s, %s)', (user_id, project_id, get_role_id_by_name(role)))
+
+
+def update_project(project_id, name, desciption):
+    if name is None and desciption is None:
+        return
+    with get_db().cursor() as cursor:
+        if name is not None:
+            cursor.execute('UPDATE Projects SET projectName=%s WHERE projectId=%s', (name, project_id))
+        if desciption is not None:
+            cursor.execute('UPDATE Projects SET projectDescription=%s WHERE projectId=%s', (desciption, project_id))
