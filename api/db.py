@@ -260,3 +260,15 @@ def get_tasks(project_id, page, per_page, not_final):
             cursor.execute(query.format(""), (project_id, per_page, page * per_page))
         res = cursor.fetchall()
         return res
+
+
+def get_task(task_id):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT Tasks.taskId, taskName, taskDescription, taskTimeEstimation, taskTimeSpent, '
+            'Statuses.statusName, Users.userId, Users.userName, Users.userEmail, Statuses.projectId '
+            'FROM Tasks '
+            'LEFT JOIN Users ON Users.userId=Tasks.userId '
+            'LEFT JOIN Statuses ON Statuses.statusId=Tasks.statusId '
+            'WHERE Tasks.taskId=%s', (task_id,))
+        res = cursor.fetchone()
+        return res
