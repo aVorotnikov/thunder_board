@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-from enum import Enum
 import db
 
 from flask import jsonify

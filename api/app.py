@@ -138,7 +138,13 @@ def delete_user_from_project(projectId, userId):
 @app.get('/project/<int:projectId>/tasks')
 @jwt_required()
 def get_tasks(projectId):
-    return f"Request to get tasks from project {projectId}"
+    args = request.args
+    not_final = False if "notFinal" else True
+    page = args.get("page", default=0, type=int)
+    per_page = args.get("per_page", default=10, type=int)
+    if page < 0 or per_page <= 0 or per_page > 100:
+        return GetResponse(ResultCode.IncorrectData)
+    return commands.tasks.get(projectId, page, per_page, not_final)
 
 @app.post('/project/<int:projectId>/task')
 @jwt_required()
