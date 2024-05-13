@@ -10,6 +10,8 @@ class ResultCode(Enum):
     IncorrectData = 102
     EmailAlreadyExists = 103
     OnlyAdmins = 104
+    OnlyAdminsAndManagers = 105
+    AlreadyInTeam = 106
 
 
 def GetResultCodeTextDescription(rc):
@@ -23,6 +25,10 @@ def GetResultCodeTextDescription(rc):
         return "Такая почта уже есть в системе"
     elif ResultCode.OnlyAdmins == rc:
         return "Доступно только администраторам"
+    elif ResultCode.OnlyAdminsAndManagers == rc:
+        return "Доступно только администраторам и менеджерам"
+    elif ResultCode.AlreadyInTeam == rc:
+        return "Пользователь уже в команде"
     return "Неизвестный код"
 
 

@@ -8,6 +8,7 @@ import db
 import config
 from result_code import *
 from checkers.users import *
+from checkers.projects import *
 from commands import *
 
 app = Flask(__name__)
@@ -110,12 +111,19 @@ def change_project(projectId):
 @app.put('/project/<int:projectId>/user/<int:userId>')
 @jwt_required()
 def add_user_to_project(projectId, userId):
-    return f"Request to add user {userId} to project {projectId}"
+    if not check_user(userId) or not check_project(projectId):
+        return "", 404
+    initiator_id = get_jwt_identity()[0]
+    if not user_is_admin(initiator_id) and UserRole.Manager != get_user_role(initiator_id, projectId):
+        return GetResponse(ResultCode.OnlyAdminsAndManagers)
+    if UserRole.No != get_user_role(userId, projectId):
+        return GetResponse(ResultCode.AlreadyInTeam)
+    return commands.project.add_user(projectId, userId, UserRole(request.json.get("role", None)))
 
 @app.delete('/project/<int:projectId>/user/<int:userId>')
 @jwt_required()
 def delete_user_from_project(projectId, userId):
-    return f"Request to delete user {userId} from project {projectId}"
+    return GetResponse(ResultCode.NotSupported)
 
 @app.get('/project/<int:projectId>/tasks')
 @jwt_required()
