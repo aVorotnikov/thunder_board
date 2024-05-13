@@ -3,6 +3,8 @@
 import psycopg
 from flask import g
 import config
+from status_types import *
+from user_role import *
 
 
 def get_db():
@@ -111,7 +113,9 @@ def get_task_owner(task_id):
 def insert_user(name, email, is_admin, password_hash):
     with get_db().cursor() as cursor:
         cursor.execute('INSERT INTO Users (userName, userEmail, userPasswordHash, userIsAdmin) VALUES '
-            '(%s, %s, %s, %s)', (name, email, password_hash, is_admin))
+            '(%s, %s, %s, %s) '
+            'RETURNING userId', (name, email, password_hash, is_admin))
+        return cursor.fetchone()[0]
 
 
 def get_projects(page, per_page, pattern):
@@ -187,7 +191,9 @@ def get_project_team(project_id):
 
 def insert_project(name, description):
     with get_db().cursor() as cursor:
-        cursor.execute('INSERT INTO Projects (projectName, projectDescription) VALUES (%s, %s)', (name, description))
+        cursor.execute('INSERT INTO Projects (projectName, projectDescription) '
+            'VALUES (%s, %s) RETURNING projectId', (name, description))
+        return cursor.fetchone()[0]
 
 
 def get_project_id_by_name(project_name):
@@ -229,7 +235,9 @@ def insert_statuses(project_id, statuses):
 def insert_user_in_project(project_id, user_id, role):
     with get_db().cursor() as cursor:
         cursor.execute('INSERT INTO UsersProjects (userId, projectId, roleId) VALUES '
-            '(%s, %s, %s)', (user_id, project_id, get_role_id_by_name(role)))
+            '(%s, %s, %s) '
+            'RETURNING userProjectId', (user_id, project_id, get_role_id_by_name(role)))
+        return cursor.fetchone()[0]
 
 
 def update_project(project_id, name, desciption):
@@ -255,7 +263,7 @@ def get_tasks(project_id, page, per_page, not_final):
             where_string = 'AND Statuses.statusTypeId!=%s '
             cursor.execute(
                 query.format(where_string),
-                (project_id, get_status_type_id_by_name(StatusTypes.Type), per_page, page * per_page))
+                (project_id, get_status_type_id_by_name(StatusTypes.Final), per_page, page * per_page))
         else:
             cursor.execute(query.format(""), (project_id, per_page, page * per_page))
         res = cursor.fetchall()
@@ -272,3 +280,25 @@ def get_task(task_id):
             'WHERE Tasks.taskId=%s', (task_id,))
         res = cursor.fetchone()
         return res
+
+
+def get_initial_state_id(project_id):
+    with get_db().cursor() as cursor:
+        cursor.execute('SELECT Statuses.statusId '
+            'FROM Statuses '
+            'LEFT JOIN StatusTypes ON StatusTypes.statusTypeId=Statuses.statusTypeId '
+            'WHERE StatusTypes.statusTypeName = %s AND Statuses.projectId = %s', (StatusTypes.Initial.value, project_id))
+        res = cursor.fetchone()
+        if not res:
+            return None
+        return res[0]
+
+
+def insert_task(project_id, user_id, name, description, proposed_time, remaining_time):
+    with get_db().cursor() as cursor:
+        cursor.execute('INSERT INTO Tasks '
+            '(taskName, taskDescription, taskTimeEstimation, taskTimeSpent, userId, statusId) VALUES '
+            '(%s, %s, %s, %s, %s, %s) '
+            'RETURNING taskId',
+            (name, description, proposed_time, remaining_time, user_id, get_initial_state_id(project_id)))
+        return cursor.fetchone()[0]
