@@ -2,7 +2,7 @@
 
 import db
 
-from flask import jsonify
+from flask import jsonify, make_response
 
 
 def get(project_id):
@@ -33,7 +33,15 @@ def get(project_id):
 
 
 def post(name, description, users, statuses):
-    pass
+    id = db.insert_project(name, description)
+    db.insert_statuses(id, statuses)
+    for user in users:
+        db.insert_user_in_project(id, user["id"], user["role"])
+    response = make_response(jsonify({
+        "id": id
+    }))
+    response.headers['Location'] = id
+    return response
 
 
 def add_user(project_id, user_id, role):
