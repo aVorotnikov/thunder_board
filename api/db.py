@@ -240,3 +240,23 @@ def update_project(project_id, name, desciption):
             cursor.execute('UPDATE Projects SET projectName=%s WHERE projectId=%s', (name, project_id))
         if desciption is not None:
             cursor.execute('UPDATE Projects SET projectDescription=%s WHERE projectId=%s', (desciption, project_id))
+
+
+def get_tasks(project_id, page, per_page, not_final):
+    with get_db().cursor() as cursor:
+        query = 'SELECT Tasks.taskId, taskName, taskDescription, taskTimeEstimation, taskTimeSpent, ' \
+            'Statuses.statusName, Users.userId, Users.userName, Users.userEmail ' \
+            'FROM Tasks ' \
+            'LEFT JOIN Users ON Users.userId=Tasks.userId ' \
+            'LEFT JOIN Statuses ON Statuses.statusId=Tasks.statusId ' \
+            'WHERE Statuses.projectId=%s {} ' \
+            'LIMIT %s OFFSET %s'
+        if not_final:
+            where_string = 'AND Statuses.statusTypeId!=%s '
+            cursor.execute(
+                query.format(where_string),
+                (project_id, get_status_type_id_by_name(StatusTypes.Type), per_page, page * per_page))
+        else:
+            cursor.execute(query.format(""), (project_id, per_page, page * per_page))
+        res = cursor.fetchall()
+        return res

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 from flask import jsonify, make_response
-from enum import Enum
 import db
 
 from result_code import *
