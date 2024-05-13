@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import db
+from result_code import *
 
 from flask import jsonify, make_response
 
@@ -35,3 +36,21 @@ def post(project_id, user_id, name, description, proposed_time, remaining_time):
     }))
     response.headers['Location'] = id
     return response
+
+
+def patch(project_id, task_id, user_id, name, description, proposed_time, remaining_time, status):
+    task = db.get_task(task_id)
+    if task is None:
+        return "", 404
+    if project_id != task[9]:
+        return "", 404
+
+    if status is not None:
+        status_id = db.get_status_id(project_id, status)
+        if status_id is None:
+            return GetResponse(ResultCode.IncorrectData)
+    else:
+        status_id = None
+
+    db.update_task(project_id, task_id, user_id, name, description, proposed_time, remaining_time, status_id)
+    return "", 200

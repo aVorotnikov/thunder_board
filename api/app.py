@@ -166,4 +166,18 @@ def get_task(projectId, taskId):
 @app.patch('/project/<int:projectId>/task/<int:taskId>')
 @jwt_required()
 def change_task(projectId, taskId):
-    return f"Request to change task {taskId} to project {projectId}"
+    if not check_project(projectId):
+        return "", 404
+    initiator_id = get_jwt_identity()[0]
+    if UserRole.Manager != get_user_role(initiator_id, projectId) and initiator_id != get_task_owner(taskId):
+        return GetResponse(ResultCode.OnlyManagersAndExecutor)
+    jsonContent = request.json
+    name = None if "name" not in jsonContent else jsonContent.get("name", None)
+    description = None if "description" not in jsonContent else jsonContent.get("description", None)
+    user_id = None if "userId" not in jsonContent else jsonContent.get("userId", None)
+    proposed_time = None if "proposedTime" not in jsonContent else jsonContent.get("proposedTime", None)
+    remaining_time = None if "remainingTime" not in jsonContent else jsonContent.get("remainingTime", None)
+    status = None if "status" not in jsonContent else jsonContent.get("status", None)
+    if user_id is not None and UserRole.No == get_user_role(user_id, projectId):
+        return GetResponse(ResultCode.IncorrectData)
+    return commands.task.patch(projectId, taskId, user_id, name, description, proposed_time, remaining_time, status)
