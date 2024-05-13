@@ -13,6 +13,7 @@ class ResultCode(Enum):
     OnlyAdminsAndManagers = 105
     AlreadyInTeam = 106
     ProjectNameAlreadyExists = 107
+    OnlyManagers = 108
 
 
 def GetResultCodeTextDescription(rc):
@@ -32,6 +33,8 @@ def GetResultCodeTextDescription(rc):
         return "Пользователь уже в команде"
     elif ResultCode.ProjectNameAlreadyExists == rc:
         return "Проект с таким названием уже существует"
+    elif ResultCode.OnlyManagers == rc:
+        return "Доступно только менеджерам"
     return "Неизвестный код"
 
 

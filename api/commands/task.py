@@ -2,7 +2,7 @@
 
 import db
 
-from flask import jsonify
+from flask import jsonify, make_response
 
 
 def get(task_id, project_id):
@@ -26,3 +26,12 @@ def get(task_id, project_id):
         "user": user
     }
     return jsonify(res)
+
+
+def post(project_id, user_id, name, description, proposed_time, remaining_time):
+    id = db.insert_task(project_id, user_id, name, description, proposed_time, remaining_time)
+    response = make_response(jsonify({
+        "id": id
+    }))
+    response.headers['Location'] = id
+    return response

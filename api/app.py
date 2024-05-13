@@ -149,7 +149,14 @@ def get_tasks(projectId):
 @app.post('/project/<int:projectId>/task')
 @jwt_required()
 def add_task(projectId):
-    return f"Request to add task to project {projectId}"
+    if UserRole.Manager != get_user_role(get_jwt_identity()[0], projectId):
+        return GetResponse(ResultCode.OnlyManagers)
+    name = request.json.get("name", None)
+    description = request.json.get("description", None)
+    user_id = request.json.get("userId", None)
+    proposed_time = request.json.get("proposedTime", None)
+    remaining_time = request.json.get("remainingTime", None)
+    return commands.task.post(projectId, user_id, name, description, proposed_time, remaining_time)
 
 @app.get('/project/<int:projectId>/task/<int:taskId>')
 @jwt_required()
