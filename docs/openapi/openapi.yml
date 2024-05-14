@@ -27,6 +27,8 @@ paths:
   /user:
     post:
       $ref: paths/user/post.yml
+    get:
+      $ref: paths/user/get_self.yml
   /user/{userId}:
     get:
       $ref: paths/user/get.yml

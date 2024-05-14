@@ -1,0 +1,27 @@
+.Auth-form-container {
+    display: flex;
+    background-color: #102E44;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .Auth-form {
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: #102E44;
+  }
+  
+  .Auth-form-content {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6C757D;
+  }

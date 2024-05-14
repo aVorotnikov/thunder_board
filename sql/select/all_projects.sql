@@ -1,2 +1,2 @@
 /* Select all projects */
-SELECT projectName, projectDescription FROM Project;
+SELECT projectId, projectName, projectDescription FROM Projects;

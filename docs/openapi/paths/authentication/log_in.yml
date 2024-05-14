@@ -34,15 +34,11 @@ responses:
         schema:
           type: object
           properties:
-            isAdmin:
-              description: Авторизованный пользователь является администратором
-              type: boolean
             token:
               description: Токен для последующей авторизации
               type: string
               format: byte
           example:
-            isAdmin: true
             token: eyJ0eXAwcvvcb1QiLCJhbGciOsdfsUzI1NiJ9.eyJpZCI6IjEzMzciLCJ1c2VybmFtZSI6ImJpem9uZSIswwwfcI6MTU5NDIwOTYwMCwicm9sZSI6InVzZXIifQ.ZvkYYnyM92xvxcvNW9_hSis7_x3_9rymsDcvcbvuOcc1I
   '400':
     description: Ошибка

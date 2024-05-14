@@ -1,0 +1,12 @@
+.task-card {
+    margin: 10px;
+    height: 150px;
+}
+
+.task-edit-button {
+    background: transparent;
+    border: 0;
+    position: absolute;
+    right: 0px;
+    top: 0px; 
+}
