@@ -18,18 +18,22 @@ function LoginForm() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ "email": email, "password": password }),
-    }).then((response) => {
+    })
+    .then((response) => {
        if (response.ok) {
-        localStorage.setItem('loggedIn', true);
-        localStorage.setItem('token', response.token);
-        navigate('/')
+        return response.json()
        }
        else {
-        setPasswordError('Неверный email или пароль')
+        throw 'Неверный email или пароль'
        }
     })
-      .catch((error) => {
-        setPasswordError('Что-то пошло не так, попробуйте позже')
+    .then((json) =>{
+      localStorage.setItem('loggedIn', "true");
+      localStorage.setItem('token', json.token);
+      navigate('/')
+    })
+    .catch((error) => {
+        setPasswordError(error ? error : 'Что-то пошло не так, попробуйте позже')
       })
   }
 

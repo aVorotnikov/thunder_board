@@ -2,7 +2,8 @@ import { Navigate } from "react-router-dom"
 import LoginForm from "../components/LoginForm";
 
 function LoginPage() {
-  if (localStorage.getItem('loggedIn')) {
+  let isLoggedIn = localStorage.getItem('loggedIn');
+  if (isLoggedIn == "true") {
     return <Navigate to="/" replace />;
   }
   return (

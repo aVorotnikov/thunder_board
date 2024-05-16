@@ -13,7 +13,7 @@ class TasksFilter extends React.Component {
                 </button>
                 <div className="d-flex flex-row w-75" style={{ backgroundColor: "#EFEFEF"}}>
                    <div className="input-group rounded w-25 mr-3" style={{ marginRight: "30px" }}>
-                        <input type="search" class="form-control rounded" placeholder="Текст задачи" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="search" className="form-control rounded" placeholder="Текст задачи" aria-label="Search" aria-describedby="search-addon" />
                         <span className="input-group-text border-0" id="search-addon" style={{ background: "transparent" }}>
                             <Search style={{ position: "absolute", right: "35px" }}/>
                         </span>
