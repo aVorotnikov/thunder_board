@@ -5,6 +5,7 @@ import BoardPage from './pages/BoardPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ProfilePage from './pages/ProfilePage';
 import LoginPage from './pages/LoginPage';
+import ErrorPage from './pages/ErrorPage';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, useNavigate } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
@@ -55,6 +56,10 @@ const router = createBrowserRouter(
           <PrivateRoute>
             <ProfilePage />
           </PrivateRoute>}
+      />
+      <Route
+        path="error"
+        element={<ErrorPage />}
       />
     </Route>
   )

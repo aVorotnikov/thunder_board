@@ -8,7 +8,7 @@ import { Navigate } from "react-router-dom"
 
 const PrivateRoute = ({ children }) => {
   let isLoggedIn = localStorage.getItem('loggedIn');
-  if (!isLoggedIn) {
+  if (isLoggedIn != "true") {
     return <Navigate to="/login" replace />;
   }
 

@@ -8,44 +8,16 @@ class Board extends React.Component {
         return (
             <div className="container-fluid" style={{ marginTop: "30px" }}>
                 <div className="row d-flex flex-nowrap board-row">
-                    <div className="mx-3 board-column">
-                        <div>
-                            <h3 className="truncated-text column-name">Создана</h3>
+                    {this.props.project.statuses.map((status, i) =>
+                         <div className="mx-3 board-column">
+                            <div>
+                                <h3 className="truncated-text column-name">{status.name}</h3>
+                            </div>
+                            {this.props.tasks.filter((task) => task.status === status.name).map((task) =>
+                                <TaskCard task={task} />
+                            )}
                         </div>
-                        <TaskCard />
-                        <TaskCard />
-                        <TaskCard />
-                        <TaskCard />
-                    </div>
-                    <div className="mx-3 board-column">
-                        <div>
-                            <h3 className="truncated-text column-name">В работе</h3>
-                        </div>
-                        <TaskCard />
-                    </div>
-                    <div className="mx-3 board-column">
-                        <div>
-                            <h3 className="truncated-text column-name">На проверке</h3>
-                        </div>
-                        <TaskCard />
-                        <TaskCard />
-                    </div>
-                    <div className="mx-3 board-column">
-                        <div>
-                            <h3 className="truncated-text column-name">Закрыта</h3>
-                        </div>
-                        <TaskCard />
-                        <TaskCard />
-                        <TaskCard />
-                        <TaskCard />
-                        <TaskCard />
-                    </div>
-                    <div className="mx-3 board-column">
-                        <div>
-                            <h3 className="truncated-text column-name">Ваще жесть закрыта закрыта закрыта</h3>
-                        </div>
-                        <TaskCard />
-                    </div>
+                    )}
                 </div>
             </div>
         );

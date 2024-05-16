@@ -8,12 +8,12 @@ class TaskCard extends React.Component {
         return (
             <div className="card task-card">
                 <div className="card-body">
-                    <h5 className="card-title truncated-text" style={{ width: 250, textAlign: "left", fontWeight: "normal" }}>Название задачи очень длинное длинное</h5>
-                    <p className="card-subtitle mb-2 text-muted truncated-text" style={{ width: 200, textAlign: "left" }}>Исполнитель</p>
+                    <h5 className="card-title truncated-text" style={{ width: 250, textAlign: "left", fontWeight: "normal" }}>{this.props.task.name}</h5>
+                    <p className="card-subtitle mb-2 text-muted truncated-text" style={{ width: 200, textAlign: "left" }}>{this.props.task.user.name}</p>
                     <button className="task-edit-button">
                         <PencilSquare size={30} />
                      </button>
-                    <p className="card-text line-clamp" style={{textAlign: "left"}}>Описание задачи</p>
+                    <p className="card-text line-clamp" style={{textAlign: "left"}}>{this.props.task.description}</p>
                  </div>
             </div>
         )

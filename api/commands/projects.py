@@ -18,4 +18,4 @@ def get(page, per_page, pattern, users):
             "name": project[1],
             "description": project[2],
         })
-    return jsonify(res)
+    return jsonify({'projects': res})
