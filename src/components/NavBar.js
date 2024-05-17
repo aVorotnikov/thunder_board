@@ -33,7 +33,6 @@ function NavBar() {
           }
         })
         .then((json) => {
-          console.log('Projects:', json.projects)
           setProjects(json.projects)
         })
         .catch((path) => {
