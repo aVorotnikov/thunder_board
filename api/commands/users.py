@@ -19,4 +19,4 @@ def get(only_admins, page, per_page, pattern, project_id):
             "email": user[2],
             "isAdmin": user[3]
         })
-    return jsonify(res)
+    return jsonify({"users": res})
