@@ -9,6 +9,8 @@ function BoardPage() {
   let { projectId } = useParams();
   const [project, setProject] = useState(null)
   const [tasks, setTasks] = useState(null)
+  const [usersFilter, setUsersFilter] = useState([])
+  const [textFilter, setTextFilter] = useState('')
   const navigate = useNavigate()
 
   let getProject = () => {
@@ -78,6 +80,13 @@ function BoardPage() {
     getTasks()
   }, [])
 
+  let filteredTasks = () => {
+    return tasks.filter((task) => (task.name.toLowerCase().includes(textFilter.toLowerCase()) ||
+                                   task.description.toLowerCase().includes(textFilter.toLowerCase())) &&
+                                   (usersFilter.length == 0 || usersFilter.includes(task.user.name) )
+                       )
+  }
+
   if (!project || !tasks) {
     return null;
   }
@@ -85,8 +94,8 @@ function BoardPage() {
   return (
     <div>
       <NavBar />
-      <TasksFilter projectName={project.name} />
-      <Board project={project} tasks={tasks} />
+      <TasksFilter projectName={project.name} users={project.users} usersFilterHandler={setUsersFilter} textFilterHandler={setTextFilter} />
+      <Board project={project} tasks={filteredTasks()} />
     </div>
   );
 }
