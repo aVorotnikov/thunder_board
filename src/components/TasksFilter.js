@@ -13,7 +13,10 @@ class TasksFilter extends React.Component {
                 </button>
                 <div className="d-flex flex-row w-75" style={{ backgroundColor: "#EFEFEF"}}>
                    <div className="input-group rounded w-25 mr-3" style={{ marginRight: "30px" }}>
-                        <input type="search" className="form-control rounded" placeholder="Текст задачи" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="search" className="form-control rounded" 
+                            placeholder="Текст задачи" aria-label="Search"
+                            aria-describedby="search-addon"
+                            onChange={(e) => {this.props.textFilterHandler(e.target.value)}} />
                         <span className="input-group-text border-0" id="search-addon" style={{ background: "transparent" }}>
                             <Search style={{ position: "absolute", right: "35px" }}/>
                         </span>
@@ -21,14 +24,11 @@ class TasksFilter extends React.Component {
                     <Select
                         isMulti
                         name="User"
-                        options={[
-                            { value: 'Иванов', label: 'Иванов' },
-                            { value: 'Петров', label: 'Петров' },
-                            { value: 'Сидоров', label: 'Сидоров' }
-                          ]}
+                        options={this.props.users.map((user) => ({ value: user.name, label: user.name}))}
                         className="basic-multi-select w-25 ml-3"
                         classNamePrefix="select"
                         placeholder="Исполнитель"
+                        onChange={(options) => this.props.usersFilterHandler(options.map((option) => option.value))}
                     />
                 </div>
             </div>
