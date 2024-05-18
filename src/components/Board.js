@@ -14,7 +14,7 @@ class Board extends React.Component {
                                 <h3 className="truncated-text column-name">{status.name}</h3>
                             </div>
                             {this.props.tasks.filter((task) => task.status === status.name).map((task) =>
-                                <TaskCard task={task} />
+                                <TaskCard task={task} projectId={this.props.project.id} users={this.props.users} />
                             )}
                         </div>
                     )}

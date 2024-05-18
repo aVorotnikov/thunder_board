@@ -13,3 +13,14 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.edit-project-window {
+    font-size: 12px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}

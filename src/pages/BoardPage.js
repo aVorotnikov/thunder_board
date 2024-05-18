@@ -37,6 +37,7 @@ function BoardPage() {
       }
     })
     .then((json) => {
+      json.id = projectId
       setProject(json)
     })
     .catch((path) => {
@@ -95,7 +96,7 @@ function BoardPage() {
     <div>
       <NavBar />
       <TasksFilter projectName={project.name} users={project.users} usersFilterHandler={setUsersFilter} textFilterHandler={setTextFilter} />
-      <Board project={project} tasks={filteredTasks()} />
+      <Board project={project} tasks={filteredTasks()} users={project.users} />
     </div>
   );
 }

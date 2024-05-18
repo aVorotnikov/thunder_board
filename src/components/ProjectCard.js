@@ -1,5 +1,47 @@
 import Card from "react-bootstrap/Card";
+import Popup from 'reactjs-popup';
+import Select from 'react-select';
 import "./Common.css"
+
+function getProjectInfo() {
+
+}
+
+function EditProjectPopup(props) {
+  return (
+    <Popup trigger={<Card.Link style={{cursor: "pointer"}}>Подробнее</Card.Link>} 
+           modal nested lockScroll closeOnDocumentClick={false}
+           onOpen={getProjectInfo}>
+          {
+            close => (
+              <div className="edit-project-window">
+                <div class="form-group">
+                  <label for="name">Название:</label>
+                  <input type="text" class="form-control" id="name" />
+                </div>
+                <div class="form-group">
+                  <label for="userName">Исполнитель:</label>
+                  <Select
+                        id="userName"
+                        name="user"
+                        options={[{ value: 'chocolate', label: 'Chocolate' },
+                        { value: 'strawberry', label: 'Strawberry' },
+                        { value: 'vanilla', label: 'Vanilla' }]}
+                        className="basic-multi-select w-100 ml-3"
+                        classNamePrefix="select"
+                        placeholder="Участник"
+                    />
+                </div>
+                <div class="form-group">
+                  <label for="description">Название:</label>
+                  <textarea class="form-control" rows="5" id="description" />
+                </div>
+              </div>
+            )
+          }
+        </Popup>
+  )
+}
 
 function ProjectCard(props) {
   return (
@@ -9,7 +51,7 @@ function ProjectCard(props) {
         <Card.Text className="line-clamp">
           {props.description}
         </Card.Text>
-        <Card.Link href="#">Подробнее</Card.Link>
+        <EditProjectPopup />
         <Card.Link href={"/board/" + props.projectId}>Доска</Card.Link>
       </Card.Body>
     </Card>
