@@ -34,9 +34,11 @@ function saveTaskInfo(projectId, taskId, task) {
       body: JSON.stringify(task)
     })
     .then((response) => {
-        if (response.ok)
-        {
-          // TODO: setState for board (change task fields)
+        if (response.ok) {
+          alert("Задача успешно отредактирована")
+        }
+        else {
+          alert("Ошибка при редактировании задачи")
         }
       })
 }
