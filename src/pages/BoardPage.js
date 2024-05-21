@@ -95,7 +95,7 @@ function BoardPage() {
   return (
     <div>
       <NavBar />
-      <TasksFilter projectName={project.name} users={project.users} usersFilterHandler={setUsersFilter} textFilterHandler={setTextFilter} />
+      <TasksFilter projectId={projectId} projectName={project.name} users={project.users} usersFilterHandler={setUsersFilter} textFilterHandler={setTextFilter} />
       <Board project={project} tasks={filteredTasks()} users={project.users} />
     </div>
   );
