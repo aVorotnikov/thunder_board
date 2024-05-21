@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PencilSquare } from "react-bootstrap-icons";
 import Popup from 'reactjs-popup';
 import Select from 'react-select';
+import { Draggable } from 'react-beautiful-dnd'
 import "./Common.css"
 import "./TaskCard.css"
 
@@ -111,19 +112,25 @@ function EditTaskPopup(props) {
     )
   }
 
-class TaskCard extends React.Component {
-    render() {
-        return (
-            <div className="card task-card">
-                <div className="card-body">
-                    <h5 className="card-title truncated-text" style={{ width: 250, textAlign: "left", fontWeight: "normal" }}>{this.props.task.name}</h5>
-                    <p className="card-subtitle mb-2 text-muted truncated-text" style={{ width: 200, textAlign: "left" }}>{this.props.task.user.name}</p>
-                    <EditTaskPopup taskId={this.props.task.id} projectId={this.props.projectId} users={this.props.users} />
-                    <p className="card-text line-clamp" style={{textAlign: "left"}}>{this.props.task.description}</p>
-                 </div>
-            </div>
-        )
-    }
+function TaskCard(props) {
+  return (
+    <Draggable draggableId={props.task.id.toString()} index={props.task.id}>
+      {(provided) => (
+        <div className="card task-card"
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <div className="card-body">
+            <h5 className="card-title truncated-text" style={{ width: 250, textAlign: "left", fontWeight: "normal" }}>{props.task.name}</h5>
+            <p className="card-subtitle mb-2 text-muted truncated-text" style={{ width: 200, textAlign: "left" }}>{props.task.user.name}</p>
+            <EditTaskPopup taskId={props.task.id} projectId={props.projectId} users={props.users} />
+            <p className="card-text line-clamp" style={{textAlign: "left"}}>{props.task.description}</p>
+          </div>
+        </div>
+      )}
+      </Draggable>
+  )
 }
 
 export default TaskCard;
