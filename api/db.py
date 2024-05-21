@@ -316,8 +316,6 @@ def insert_task(project_id, user_id, name, description, proposed_time, remaining
 
 
 def update_task(project_id, task_id, user_id, name, description, proposed_time, remaining_time, status_id):
-    if name is None and description is None:
-        return
     with get_db().cursor() as cursor:
         if user_id is not None:
             cursor.execute('UPDATE Tasks SET userId=%s WHERE taskId=%s', (user_id, task_id))
