@@ -8,7 +8,7 @@ class ProjectsFilter extends React.Component {
     render() {
         return (
             <div className="d-flex flex-row justify-content-between" style={{ marginTop: "10px", height: "38px" }}>
-                <CreateProjectPopup users={this.props.users} />
+                <CreateProjectPopup users={this.props.users} projectId={null} />
                 <div className="d-flex flex-row w-75" style={{ backgroundColor: "#EFEFEF"}}>
                    <div className="input-group rounded w-25 mr-3" style={{ marginRight: "30px" }}>
                         <input type="search" className="form-control rounded"
