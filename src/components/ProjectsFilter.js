@@ -2,14 +2,13 @@ import React from "react";
 import { Search } from "react-bootstrap-icons";
 import { PlusSquare } from "react-bootstrap-icons";
 import Select from 'react-select';
+import CreateProjectPopup from "./CreateProjectPopup";
 
 class ProjectsFilter extends React.Component {
     render() {
         return (
             <div className="d-flex flex-row justify-content-between" style={{ marginTop: "10px", height: "38px" }}>
-                <button style={{ border: 0, background: "transparent", marginLeft: "30px" }}>
-                    <PlusSquare size={30} />
-                </button>
+                <CreateProjectPopup users={this.props.users} />
                 <div className="d-flex flex-row w-75" style={{ backgroundColor: "#EFEFEF"}}>
                    <div className="input-group rounded w-25 mr-3" style={{ marginRight: "30px" }}>
                         <input type="search" className="form-control rounded"
