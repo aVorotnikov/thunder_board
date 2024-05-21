@@ -55,7 +55,7 @@ function EditTaskPopup(props) {
         onOpen={() => getTaskInfo(props.projectId, props.taskId, setTask)}>
         {
             close => ( task &&
-            <div className="edit-project-window">
+            <div className="edit-project-task-window">
                 <div className="form-group" style={{ marginBottom: "10px" }}>
                     <label for="name">Название:</label>
                     <input type="text" className="form-control" id="name" defaultValue={task.name} />

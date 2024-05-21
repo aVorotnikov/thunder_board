@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Popup from 'reactjs-popup';
 import Select from 'react-select';
@@ -7,39 +8,79 @@ function getProjectInfo() {
 
 }
 
+function MainEditPage(props) {
+  return (
+    <div className="edit-project-task-window" style={{ width: "300px" }}>
+      <h4>Создание проекта</h4>
+      <div class="form-group" style={{ marginBottom: "10px" }}>
+        <label for="name">Название:</label>
+        <input type="text" class="form-control" id="name" />
+      </div>
+      <div class="form-group" style={{ marginBottom: "10px" }}>
+        <label for="description">Описание</label>
+        <textarea class="form-control" rows="5" id="description" />
+      </div>
+      <div style={{ marginBottom: "10px" }}>
+        <Card.Link style={{cursor: "pointer"}} onClick={() => props.setPage(1)}>Участники проекта</Card.Link>
+      </div>
+      <div style={{ marginBottom: "10px" }}>
+        <Card.Link style={{cursor: "pointer"}} onClick={() => props.setPage(2)}>Настроить статусы задач</Card.Link>
+      </div>
+      <div class="d-flex justify-content-center">
+          <button type="button" className="btn btn-primary" style={{ marginRight: "5px"}}
+                  onClick={() => props.closeCallback()}>
+              Сохранить
+          </button>
+          <button type="button" className="btn btn-secondary"  style={{ marginLeft: "5px"}}
+                  onClick={() => props.closeCallback()}>
+              Закрыть
+          </button>
+      </div>
+    </div>
+  )
+}
+
+function EditProjectUsers(props) {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+function EditProjectStatuses(props) {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+function EditProject(props) {
+  const [step, setStep] = useState(0)
+  if (step === 0)
+    return <MainEditPage closeCallback={props.closeCallback} setPage={setStep} />
+  else if (step === 1)
+    return <EditProjectUsers />
+  else if (step === 2)
+    return <EditProjectStatuses />
+}
+
+function CreateProjectPopup(props) {
+  
+}
+
 function EditProjectPopup(props) {
   return (
     <Popup trigger={<Card.Link style={{cursor: "pointer"}}>Подробнее</Card.Link>} 
-           modal nested lockScroll closeOnDocumentClick={false}
-           onOpen={getProjectInfo}>
+          modal nested lockScroll closeOnDocumentClick={false}
+          onOpen={getProjectInfo}>
           {
             close => (
-              <div className="edit-project-window">
-                <div class="form-group">
-                  <label for="name">Название:</label>
-                  <input type="text" class="form-control" id="name" />
-                </div>
-                <div class="form-group">
-                  <label for="userName">Исполнитель:</label>
-                  <Select
-                        id="userName"
-                        name="user"
-                        options={[{ value: 'chocolate', label: 'Chocolate' },
-                        { value: 'strawberry', label: 'Strawberry' },
-                        { value: 'vanilla', label: 'Vanilla' }]}
-                        className="basic-multi-select w-100 ml-3"
-                        classNamePrefix="select"
-                        placeholder="Участник"
-                    />
-                </div>
-                <div class="form-group">
-                  <label for="description">Название:</label>
-                  <textarea class="form-control" rows="5" id="description" />
-                </div>
-              </div>
+              <EditProject closeCallback={close} />
             )
           }
-        </Popup>
+    </Popup>
   )
 }
 
